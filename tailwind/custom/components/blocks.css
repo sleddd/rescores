@@ -1,0 +1,41 @@
+/**
+ * Custom styles for core blocks.
+ */
+
+.wp-block-post-title {
+	@apply mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl;
+	@apply leading-snug;
+}
+
+.wp-block-quote {
+	p {
+		@apply pl-6;
+	}
+}
+
+.post-meta {
+	clear: both;
+	@apply flex justify-between border-t border-slate-500 p-3 pl-0;
+	margin-left: auto !important;
+    margin-right: auto !important;
+	max-width: var( --wp--style--global--content-size );
+
+	.wp-block-group {
+		gap: 10px;
+	}
+
+	div, p {
+		padding: 0;
+		margin: 0 !important;
+	}
+}
+
+.wp-block-comments {
+	h2 {
+		@apply pb-5;
+	}
+}
+
+.comment-form-comment {
+	@apply mt-5 mb-5;
+}

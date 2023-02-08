@@ -17,24 +17,24 @@
 				},
 				{
 					"slug": "primary",
-					"color": "#b91c1c",
+					"color": "#1d4ed8",
 					"name": "Primary"
 				},
 				{
 					"slug": "secondary",
-					"color": "#15803d",
+					"color": "#9a3412",
 					"name": "Secondary"
 				},
 				{
 					"slug": "tertiary",
-					"color": "#0369a1",
+					"color": "#15803d",
 					"name": "Tertiary"
 				}
 			]
 		},
 		"layout": {
-			"contentSize": "40rem",
-			"wideSize": "60rem"
+			"contentSize": "80%",
+			"wideSize": "80%"
 		},
 		"spacing": {
 			"spacingScale": {

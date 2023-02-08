@@ -37,22 +37,5 @@ $(post-title-selector) {
 .page-content > *,
 .entry-content > * {
 	/* Content width from the `theme.json` file */
-	@apply max-w-content mx-auto;
-}
-
-.entry-content > .alignwide {
-	/* Wide width from the `theme.json` file */
-	@apply max-w-wide;
-}
-
-.entry-content > .alignfull {
-	@apply max-w-none;
-}
-
-.entry-content > .alignleft {
-	@apply float-left mr-8;
-}
-
-.entry-content > .alignright {
-	@apply float-right ml-8;
+	@apply mx-auto;
 }
