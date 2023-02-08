@@ -12,12 +12,13 @@
  * editor.
 */
 body {
-	@apply bg-background text-foreground font-sans;
+	@apply bg-background text-foreground font-sans text-gray-900;
 }
 
 h1 { 
 	
 	@apply text-5xl font-extrabold;
+	@apply leading-snug;
 }
 
 h2 {
@@ -40,14 +41,75 @@ h6 {
 	@apply text-lg font-bold;
 }
 
-.wp-block-post-title {
-	@apply mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl;
-}
-
 header  {
 	@apply flex flex-wrap items-center justify-between p-4 mb-4;
 
 	div {
 		@apply flex flex-wrap items-center justify-between mx-auto;
+	}
+}
+
+blockquote {
+	quotes: "“" "”" "“" "”";
+	font-family: serif;
+	@apply relative flex bg-slate-100 text-xl italic font-medium text-gray-600 justify-start p-6 pl-10 border-l-8 border-slate-300;
+}
+
+blockquote:before {
+	@apply absolute float-left text-5xl opacity-30;
+    top: 20px;
+    left: 10px;
+	content: open-quote;
+}
+
+blockquote p cite {
+	@apply text-base uppercase;
+}
+
+.btn, .btn-primary, .wp-element-button {
+	@apply text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none;
+}
+
+.btn-primary  {
+	@apply text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none;
+}
+
+table {
+	@apply table-auto border-collapse w-full text-sm;
+
+	th {
+		@apply bg-slate-200 border-b border-slate-600 font-medium p-4 pl-4 pt-4 pb-3 text-slate-800 text-left;
+
+		&:first-child  {
+			@apply rounded-tl-xl;
+		}
+
+		&:last-child  {
+			@apply rounded-tr-xl;
+		}
+	}
+
+	td {
+		@apply border-b border-slate-300 p-4 pl-4 text-slate-700;
+	}
+}
+
+ul {
+	@apply max-w-md space-y-1 list-disc list-inside;
+}
+
+ol {
+	@apply pl-5 mt-2 space-y-1 list-decimal list-inside
+}
+
+dl {
+	@apply max-w-md text-gray-900 divide-y divide-gray-200;
+
+	dt {
+		@apply pt-6 pb-2 text-gray-500;
+	}
+
+	dd {
+		@apply text-lg pt-2 pb-2;
 	}
 }
