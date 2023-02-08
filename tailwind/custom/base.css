@@ -15,6 +15,11 @@ body {
 	@apply bg-background text-foreground font-sans text-gray-900;
 }
 
+body .is-layout-flow > * + * {
+    margin-block-start: 10px;
+    margin-block-end: 0;
+}
+
 h1 { 
 	
 	@apply text-5xl font-extrabold;
@@ -42,11 +47,26 @@ h6 {
 }
 
 header  {
-	@apply flex flex-wrap items-center justify-start p-4 mb-4 max-w-none w-full;
+	@apply flex flex-wrap bg-white p-4 mb-4 max-w-none w-full sticky top-0 z-50 shadow-md;
 
 	.wp-block-navigation {
 		flex: 1;
+		@apply items-start mb-4;
 	}
+
+	.wp-block-navigation__responsive-container-open {
+		position: absolute;
+		top: 0px;
+	}
+
+	.logo-container {
+		@apply flex gap-4;
+	}
+}
+
+.wp-block-navigation__responsive-close {
+	width: 90%;
+	max-width: 90% !important;
 }
 
 blockquote {

@@ -15,7 +15,7 @@
 
 .post-meta {
 	clear: both;
-	@apply flex justify-between border-t border-slate-500 p-3 pl-0;
+	@apply flex justify-start gap-2 border-t border-slate-500 p-3 pl-0 text-gray-600;
 	margin-left: auto !important;
     margin-right: auto !important;
 	max-width: var( --wp--style--global--content-size );
@@ -38,4 +38,8 @@
 
 .comment-form-comment {
 	@apply mt-5 mb-5;
+}
+
+#reply-title {
+	@apply mb-3;
 }
