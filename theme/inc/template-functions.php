@@ -5,15 +5,27 @@
  * @package rescored
  */
 
+ /**
+  * Finds and renders a block template.
+  */
+function _rs_render_block_template( $template_name ) {
+	if ( ! empty( $template_name ) ) {
+		$template = get_block_template( 'rescored/theme//' . $template_name, 'wp_template' );
+		if ( is_object( $template ) && property_exists( $template, 'content' ) ) {
+			echo do_blocks( $template->content );
+		}
+	}
+}
+
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
-function _tw_pingback_header() {
+function _rs_pingback_header() {
 	if ( is_singular() && pings_open() ) {
 		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
 	}
 }
-add_action( 'wp_head', '_tw_pingback_header' );
+add_action( 'wp_head', '_rs_pingback_header' );
 
 /**
  * Changes comment form default fields.
@@ -22,7 +34,7 @@ add_action( 'wp_head', '_tw_pingback_header' );
  *
  * @return array Returns the modified fields.
  */
-function _tw_comment_form_defaults( $defaults ) {
+function _rs_comment_form_defaults( $defaults ) {
 	$comment_field = $defaults['comment_field'];
 
 	// Adjust height of comment form.
@@ -30,12 +42,12 @@ function _tw_comment_form_defaults( $defaults ) {
 
 	return $defaults;
 }
-add_filter( 'comment_form_defaults', '_tw_comment_form_defaults' );
+add_filter( 'comment_form_defaults', '_rs_comment_form_defaults' );
 
 /**
  * Filters the default archive titles.
  */
-function _tw_get_the_archive_title() {
+function _rs_get_the_archive_title() {
 	if ( is_category() ) {
 		$title = __( 'Category Archives: ', 'rescored' ) . '<span>' . single_term_title( '', false ) . '</span>';
 	} elseif ( is_tag() ) {
@@ -67,26 +79,26 @@ function _tw_get_the_archive_title() {
 	}
 	return $title;
 }
-add_filter( 'get_the_archive_title', '_tw_get_the_archive_title' );
+add_filter( 'get_the_archive_title', '_rs_get_the_archive_title' );
 
 /**
  * Determines if post thumbnail can be displayed.
  */
-function _tw_can_show_post_thumbnail() {
-	return apply_filters( '_tw_can_show_post_thumbnail', ! post_password_required() && ! is_attachment() && has_post_thumbnail() );
+function _rs_can_show_post_thumbnail() {
+	return apply_filters( '_rs_can_show_post_thumbnail', ! post_password_required() && ! is_attachment() && has_post_thumbnail() );
 }
 
 /**
  * Returns the size for avatars used in the theme.
  */
-function _tw_get_avatar_size() {
+function _rs_get_avatar_size() {
 	return 60;
 }
 
 /**
  * Create the continue reading link
  */
-function _tw_continue_reading_link() {
+function _rs_continue_reading_link() {
 
 	if ( ! is_admin() ) {
 		$continue_reading = sprintf(
@@ -100,10 +112,10 @@ function _tw_continue_reading_link() {
 }
 
 // Filter the excerpt more link.
-add_filter( 'excerpt_more', '_tw_continue_reading_link' );
+add_filter( 'excerpt_more', '_rs_continue_reading_link' );
 
 // Filter the content more link.
-add_filter( 'the_content_more_link', '_tw_continue_reading_link' );
+add_filter( 'the_content_more_link', '_rs_continue_reading_link' );
 
 /**
  * Outputs a comment in the HTML5 format.
@@ -116,7 +128,7 @@ add_filter( 'the_content_more_link', '_tw_continue_reading_link' );
  * @param array      $args    An array of arguments.
  * @param int        $depth   Depth of the current comment.
  */
-function _tw_html5_comment( $comment, $args, $depth ) {
+function _rs_html5_comment( $comment, $args, $depth ) {
 	$tag = ( 'div' === $args['style'] ) ? 'div' : 'li';
 
 	$commenter          = wp_get_current_commenter();

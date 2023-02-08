@@ -20,11 +20,13 @@
 
 <body <?php body_class(); ?>>
 
-<?php wp_body_open(); ?>
+<?php
+wp_body_open();
+
+echo block_header_area();
+?>
 
 <div id="page">
 	<a href="#content" class="sr-only"><?php esc_html_e( 'Skip to content', 'rescored' ); ?></a>
-
-	<?php get_template_part( 'template-parts/layout/header', 'content' ); ?>
 
 	<div id="content">

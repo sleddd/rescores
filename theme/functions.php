@@ -7,12 +7,12 @@
  * @package rescored
  */
 
-if ( ! defined( '_tw_VERSION' ) ) {
+if ( ! defined( '_rs_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_tw_VERSION', '0.1.0' );
+	define( '_rs_VERSION', '0.1.0' );
 }
 
-if ( ! function_exists( '_tw_setup' ) ) :
+if ( ! function_exists( '_rs_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -20,7 +20,7 @@ if ( ! function_exists( '_tw_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function _tw_setup() {
+	function _rs_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -79,23 +79,29 @@ if ( ! function_exists( '_tw_setup' ) ) :
 		add_theme_support( 'editor-styles' );
 
 		// Enqueue editor styles.
-		add_editor_style( 'style-editor.css' );
+		add_editor_style( 'editor-style.css' );
 
 		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
 
-		// Remove support for block templates.
-		remove_theme_support( 'block-templates' );
+		// Add theme support for block templates.
+		add_theme_support( 'block-templates' );
+
+		// Add theme support for block template parts.
+		add_theme_support( 'block-template-parts' );
+
+		// Add theme support for block styles.
+		add_theme_support( 'wp-block-styles' );
 	}
 endif;
-add_action( 'after_setup_theme', '_tw_setup' );
+add_action( 'after_setup_theme', '_rs_setup' );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function _tw_widgets_init() {
+function _rs_widgets_init() {
 	register_sidebar(
 		array(
 			'name'          => __( 'Footer', 'rescored' ),
@@ -108,20 +114,20 @@ function _tw_widgets_init() {
 		)
 	);
 }
-add_action( 'widgets_init', '_tw_widgets_init' );
+add_action( 'widgets_init', '_rs_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function _tw_scripts() {
-	wp_enqueue_style( 'rescored-style', get_stylesheet_uri(), array(), _tw_VERSION );
-	wp_enqueue_script( 'rescored-script', get_template_directory_uri() . '/js/script.min.js', array(), _tw_VERSION, true );
+function _rs_scripts() {
+	wp_enqueue_style( 'rescored-style', get_stylesheet_uri(), array(), _rs_VERSION );
+	wp_enqueue_script( 'rescored-script', get_template_directory_uri() . '/js/script.min.js', array(), _rs_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', '_tw_scripts' );
+add_action( 'wp_enqueue_scripts', '_rs_scripts' );
 
 /**
  * Add the block editor class to TinyMCE.
@@ -131,11 +137,11 @@ add_action( 'wp_enqueue_scripts', '_tw_scripts' );
  * @param array $settings TinyMCE settings.
  * @return array
  */
-function _tw_tinymce_add_class( $settings ) {
+function _rs_tinymce_add_class( $settings ) {
 	$settings['body_class'] = 'block-editor-block-list__layout';
 	return $settings;
 }
-add_filter( 'tiny_mce_before_init', '_tw_tinymce_add_class' );
+add_filter( 'tiny_mce_before_init', '_rs_tinymce_add_class' );
 
 /**
  * Custom template tags for this theme.

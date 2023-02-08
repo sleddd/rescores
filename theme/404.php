@@ -8,24 +8,7 @@
  */
 
 get_header();
-?>
 
-	<section id="primary">
-		<main id="main">
+block_template_part( '404' );
 
-			<div>
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Page Not Found', 'rescored' ); ?></h1>
-				</header><!-- .page-header -->
-
-				<div class="page-content prose">
-					<p><?php esc_html_e( 'This page could not be found. It might have been removed or renamed, or it may never have existed.', 'rescored' ); ?></p>
-					<?php get_search_form(); ?>
-				</div><!-- .page-content -->
-			</div>
-
-		</main><!-- #main -->
-	</section><!-- #primary -->
-
-<?php
 get_footer();
