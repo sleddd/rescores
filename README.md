@@ -1,7 +1,7 @@
-rescored
+Rescored
 ========
 
-A rescore of an old theme for use with blocks and tailwind
+A remodel of an old WordPress theme for blocks using Tailwind. It is a hybrid theme that supports HTML, PHP, FSE, and the customizer.
 
 ## Installation
 
