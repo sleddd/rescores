@@ -21,10 +21,13 @@
 <body <?php body_class(); ?>>
 
 <?php
+
 wp_body_open();
 
 echo block_header_area();
+
 ?>
+
 
 <div id="page">
 	<a href="#content" class="sr-only"><?php esc_html_e( 'Skip to content', 'rescored' ); ?></a>

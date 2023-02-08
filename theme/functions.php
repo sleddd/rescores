@@ -96,6 +96,10 @@ if ( ! function_exists( '_rs_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', '_rs_setup' );
 
+
+// Adding customizer to block theme.
+add_action( 'customize_register', '__return_true' );
+
 /**
  * Register widget area.
  *

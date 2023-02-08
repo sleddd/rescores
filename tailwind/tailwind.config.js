@@ -1,7 +1,7 @@
 // Set Preflight flag and Tailwind Typography class name based on the build
 // target.
 let includePreflight, typographyClassName;
-if ('editor' === process.env._tw_TARGET) {
+if ('editor' === process.env._rs_TARGET) {
 	includePreflight = false;
 	typographyClassName = 'block-editor-block-list__layout';
 } else {
@@ -16,6 +16,7 @@ module.exports = {
 	],
 	content: [
 		// Ensure changes to PHP files and `theme.json` trigger a rebuild.
+		'./theme/**/*.html',
 		'./theme/**/*.php',
 		'./theme/theme.json',
 	],
