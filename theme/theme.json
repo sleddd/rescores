@@ -6,29 +6,64 @@
 		"color": {
 			"palette": [
 				{
-					"slug": "background",
-					"color": "#ffffff",
-					"name": "Background"
+					"slug": "body-copy",
+					"color": "#0f172a",
+					"name": "Body Copy"
 				},
 				{
-					"slug": "foreground",
-					"color": "#404040",
-					"name": "Foreground"
+					"slug": "gray-lt",
+					"color": "#f1f5f9",
+					"name": "Gray - Lt"
 				},
 				{
-					"slug": "primary",
-					"color": "#1d4ed8",
-					"name": "Primary"
+					"slug": "gray-md",
+					"color": "#cbd5e1",
+					"name": "Gray - Md"
+				},
+				{
+					"slug": "gray-dark",
+					"color": "#475569",
+					"name": "Gray - Dark"
+				},
+				{
+					"slug": "link-active",
+					"color": "#1e3a8a",
+					"name": "Primary - Link Active"
+				},
+				{
+					"slug": "link-hover",
+					"color": "#357dc0",
+					"name": "Primary Lt - Link Hover"
+				},
+				{
+					"slug": "link-visited",
+					"color": "#2b2788",
+					"name": "Link Visited"
+				},
+				{
+					"slug": "link-focus",
+					"color": "#254a87",
+					"name": "Link Focus"
 				},
 				{
 					"slug": "secondary",
-					"color": "#9a3412",
+					"color": "#da804f",
 					"name": "Secondary"
 				},
 				{
-					"slug": "tertiary",
-					"color": "#15803d",
-					"name": "Tertiary"
+					"slug": "tertiary-red",
+					"color": "#c7344c",
+					"name": "Tertiary - Red"
+				},
+				{
+					"slug": "tertiary_green",
+					"color": "#25903c",
+					"name": "Tertiary - Green"
+				},
+				{
+					"slug": "gold",
+					"color": "#dcb84f",
+					"name": "Gold"
 				}
 			]
 		},
