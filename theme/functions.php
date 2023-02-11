@@ -96,6 +96,29 @@ if ( ! function_exists( '_rs_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', '_rs_setup' );
 
+/**
+ * Set the default image if none exists.
+ *
+ * @param string $html              The post thumbnail HTML.
+ * @param int    $post_id           The post ID.
+ * @return $html
+ */
+function rs_add_fallback_ft_image( $html, $post_id ) {
+	if ( empty( $html ) ) {
+		$image_placeholder_url = get_stylesheet_directory_uri() . '/assets/images/placeholder.png';
+		$image_placeholder_width  = '400';
+		$image_placeholder_height = '240';
+		if ( is_single() || is_page() ) {
+			$image_placeholder_width  = '1200';
+			$image_placeholder_height = '400';
+			$image_placeholder_url = get_stylesheet_directory_uri() . '/assets/images/placeholder-banner.png';
+		}
+		$html = '<img src="' . esc_url( $image_placeholder_url ) . '" width="' . (int) $image_placeholder_width . '" height="' . (int) $image_placeholder_height . '" loading="lazy" alt="' . get_the_title( $post_id ) . '" />';
+	}
+	return $html;
+}
+add_filter( 'post_thumbnail_html', 'rs_add_fallback_ft_image', 5, 2 );
+
 
 // Adding customizer to block theme.
 add_action( 'customize_register', '__return_true' );

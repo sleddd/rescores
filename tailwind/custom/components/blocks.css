@@ -99,12 +99,26 @@
 	max-width: 90% !important;
 }
 
+.single-post, .page {
+	.wp-block-post-featured-image {
+		img {
+			max-height: 400px;
+		}
+		
+	}
+}
+
 .post-meta {
 	clear: both;
-	@apply flex justify-start gap-2 border-t border-slate-500 p-3 pl-0 text-gray-600;
 	margin-left: auto !important;
-    margin-right: auto !important;
+	margin-right: auto !important;
 	max-width: var( --wp--style--global--content-size );
+	margin-block-start: 3em !important;
+	@apply border-t border-gray-md;
+
+	.wp-block-group:first-of-type {
+		@apply flex justify-start gap-2 p-3 pl-0 text-slate-400 italic;
+	}
 
 	.wp-block-group {
 		gap: 10px;
