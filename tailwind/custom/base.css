@@ -139,6 +139,14 @@ table {
 		@apply border-b border-gray-md p-4 pl-4;
 	}
 }
+ 
+.wp-block-calendar {
+	table {
+		th {
+			@apply bg-gray-dark text-center border-0 !important;
+		}
+	}
+}
 
 ul {
 	@apply space-y-1 list-disc list-inside;

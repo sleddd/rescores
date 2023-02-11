@@ -112,6 +112,12 @@
 	}
 }
 
+.archive, .category, .home, .blog {
+	.wp-block-post-featured-image {
+		@apply pb-4;
+	}
+}
+
 .post-meta {
 	clear: both;
 	margin-left: auto !important;
