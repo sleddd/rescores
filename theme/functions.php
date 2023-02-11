@@ -105,7 +105,7 @@ add_action( 'after_setup_theme', '_rs_setup' );
  */
 function rs_add_fallback_ft_image( $html, $post_id ) {
 	if ( empty( $html ) ) {
-		$image_placeholder_url = get_stylesheet_directory_uri() . '/assets/images/placeholder.png';
+		$image_placeholder_url = get_stylesheet_directory_uri() . '/assets/images/placeholder-h-dark.jpeg';
 		$image_placeholder_width  = '400';
 		$image_placeholder_height = '240';
 		if ( is_single() || is_page() ) {

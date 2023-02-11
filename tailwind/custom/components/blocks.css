@@ -100,6 +100,8 @@
 }
 
 .single-post, .page {
+
+	.wp-block-post-featured-image.alignfull img, .wp-block-post-featured-image.alignwide,
 	.wp-block-post-featured-image {
 		width:100%;
 		img {
