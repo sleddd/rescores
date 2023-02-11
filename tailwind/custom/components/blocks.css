@@ -101,8 +101,11 @@
 
 .single-post, .page {
 	.wp-block-post-featured-image {
+		object-fit: cover;
 		img {
 			max-height: auto;
+			min-height: 300px;
+		
 		}
 		
 	}
