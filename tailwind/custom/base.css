@@ -91,10 +91,20 @@ blockquote p cite {
 	@apply text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none;
 }
 
+.wp-block-button.is-style-squared .wp-block-button__link {
+	border-radius: 0;
+}
 
 .btn-secondary {
 	@apply text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none;
 }
+
+.btn, .btn-primary, .btn-secondary, .wp-element-button, .wp-block-button__link {
+	&:hover {
+		color: #fff;
+	}
+}
+
 
 table {
 	@apply table-auto border-collapse w-full text-sm;
