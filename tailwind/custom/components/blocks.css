@@ -23,7 +23,7 @@
 	.wp-block-navigation__submenu-container,
 	&:not(.has-background) .wp-block-navigation__submenu-container {
 		/*background-color: var(--wp--preset--color--gray-lt) !important;*/
-		box-shadow: -5px 0px 2px 0px  var(--wp--preset--color--gray-lt);
+		box-shadow: -5px 0px 5px -3px  var(--wp--preset--color--gray-dark);
 		transition: all .4s ease-in;
 
 		@media( max-width: 600px ) {
