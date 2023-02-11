@@ -12,7 +12,7 @@
  * editor.
 */
 body {
-	@apply bg-white font-sans text-body-copy;
+	@apply bg-white font-sans text-body-copy leading-normal;
 }
 
 body .is-layout-flow > * + * {
@@ -73,7 +73,7 @@ header  {
 blockquote {
 	quotes: "“" "”" "“" "”";
 	font-family: serif;
-	@apply relative flex bg-slate-100 text-xl italic font-medium bg-gray-lt justify-start p-6 pl-10 border-l-8 border-gray-md text-gray-dark;
+	@apply relative flex bg-slate-100 text-xl italic font-medium bg-gray-lt justify-start p-6 pl-10 border-l-8 border-gray-lt text-gray-dark;
 	border: 1px solid var(--wp--preset--color--gray-md);
 	border-left: 0.25em solid var(--wp--preset--color--gray-md);
 }
@@ -112,19 +112,31 @@ table {
 	@apply table-auto border-collapse w-full text-sm;
 
 	th {
-		@apply bg-slate-200 border-b border-slate-600 font-medium p-4 pl-4 pt-4 pb-3 bg-gray-md text-left;
+		@apply font-medium p-4 pl-4 pt-4 pb-3 text-left;
+	}
 
-		&:first-child  {
-			@apply rounded-tl-xl;
+	thead {
+		th {
+			@apply bg-gray-dark border-b border-gray-dark text-gray-lt;
+
+			&:first-child  {
+				@apply rounded-tl-xl;
+			}
+	
+			&:last-child  {
+				@apply rounded-tr-xl;
+			}
 		}
+	}
 
-		&:last-child  {
-			@apply rounded-tr-xl;
+	tbody {
+		th {
+			@apply border-b border-gray-md bg-gray-lt text-gray-dark;
 		}
 	}
 
 	td {
-		@apply border-b border-slate-300 p-4 pl-4;
+		@apply border-b border-gray-md p-4 pl-4;
 	}
 }
 
