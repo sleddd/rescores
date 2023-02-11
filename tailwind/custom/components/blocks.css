@@ -8,6 +8,8 @@
 }
 
 .wp-block-quote {
+	border-left: 0.25em solid var(--wp--preset--color--gray-md) !important;
+
 	p {
 		@apply pl-6;
 	}
@@ -126,4 +128,8 @@
 
 #reply-title {
 	@apply mb-3;
+}
+
+.wp-block-button {
+	padding: 0.5em;
 }

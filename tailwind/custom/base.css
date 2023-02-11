@@ -73,7 +73,9 @@ header  {
 blockquote {
 	quotes: "“" "”" "“" "”";
 	font-family: serif;
-	@apply relative flex bg-slate-100 text-xl italic font-medium bg-gray-lt justify-start p-6 pl-10 border-l-8 border-slate-300;
+	@apply relative flex bg-slate-100 text-xl italic font-medium bg-gray-lt justify-start p-6 pl-10 border-l-8 border-gray-md text-gray-dark;
+	border: 1px solid var(--wp--preset--color--gray-md);
+	border-left: 0.25em solid var(--wp--preset--color--gray-md);
 }
 
 blockquote:before {
