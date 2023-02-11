@@ -102,7 +102,7 @@
 .single-post, .page {
 	.wp-block-post-featured-image {
 		img {
-			max-height: 400px;
+			max-height: auto;
 		}
 		
 	}
