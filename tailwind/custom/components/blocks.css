@@ -127,3 +127,7 @@
 #reply-title {
 	@apply mb-3;
 }
+
+.wp-block-button.is-style-squared .wp-block-button__link {
+	border-radius: 0;
+}

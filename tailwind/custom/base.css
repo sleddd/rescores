@@ -68,16 +68,13 @@ header  {
 	.logo-container {
 		@apply flex gap-4;
 	}
-
 }
-
 
 blockquote {
 	quotes: "“" "”" "“" "”";
 	font-family: serif;
 	@apply relative flex bg-slate-100 text-xl italic font-medium bg-gray-lt justify-start p-6 pl-10 border-l-8 border-slate-300;
 }
-
 
 blockquote:before {
 	@apply absolute float-left text-5xl opacity-30;
@@ -94,9 +91,6 @@ blockquote p cite {
 	@apply text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none;
 }
 
-.wp-block-button.is-style-squared .wp-block-button__link {
-	border-radius: 0;
-}
 
 .btn-secondary {
 	@apply text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none;
@@ -148,4 +142,21 @@ dl {
 	dd {
 		@apply text-lg pt-2 pb-2;
 	}
+}
+
+
+.aligncenter {
+	@apply m-auto;
+}
+
+.alignleft {
+	@apply float-left m-4;
+}
+
+.alignright {
+	@apply float-right m-4;
+}
+
+.wp-caption-text {
+	@apply text-gray-dark text-sm pt-2 pb-2 italic;
 }
