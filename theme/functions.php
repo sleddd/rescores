@@ -7,9 +7,9 @@
  * @package rescored
  */
 
-if ( ! defined( '_rs_VERSION' ) ) {
+if ( ! defined( '_RS_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_rs_VERSION', '0.1.0' );
+	define( '_RS_VERSION', '0.1.0' );
 }
 
 if ( ! function_exists( '_rs_setup' ) ) :
@@ -92,6 +92,7 @@ if ( ! function_exists( '_rs_setup' ) ) :
 
 		// Add theme support for block styles.
 		add_theme_support( 'wp-block-styles' );
+
 	}
 endif;
 add_action( 'after_setup_theme', '_rs_setup' );
@@ -105,12 +106,14 @@ add_action( 'after_setup_theme', '_rs_setup' );
  */
 function rs_add_fallback_ft_image( $html, $post_id ) {
 	if ( empty( $html ) ) {
+
 		$image_placeholder_url = get_stylesheet_directory_uri() . '/assets/images/placeholder-h-dark.jpeg';
-		$image_placeholder_width  = '400';
-		$image_placeholder_height = '240';
+		$image_placeholder_width  = '580';
+		$image_placeholder_height = '300';
+
 		if ( is_single() || is_page() ) {
-			$image_placeholder_width  = '1200';
-			$image_placeholder_height = '400';
+			$image_placeholder_width  = '1600';
+			$image_placeholder_height = '500';
 			$image_placeholder_url = get_stylesheet_directory_uri() . '/assets/images/placeholder-banner.png';
 		}
 		$html = '<img src="' . esc_url( $image_placeholder_url ) . '" width="' . (int) $image_placeholder_width . '" height="' . (int) $image_placeholder_height . '" loading="lazy" alt="' . get_the_title( $post_id ) . '" />';
@@ -147,8 +150,8 @@ add_action( 'widgets_init', '_rs_widgets_init' );
  * Enqueue scripts and styles.
  */
 function _rs_scripts() {
-	wp_enqueue_style( 'rescored-style', get_stylesheet_uri(), array(), _rs_VERSION );
-	wp_enqueue_script( 'rescored-script', get_template_directory_uri() . '/js/script.min.js', array(), _rs_VERSION, true );
+	wp_enqueue_style( '_rs-style', get_stylesheet_uri(), array(), _RS_VERSION );
+	wp_enqueue_script( '_rs-script', get_template_directory_uri() . '/js/script.min.js', array(), _RS_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -179,3 +182,15 @@ require get_template_directory() . '/inc/template-tags.php';
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
+
+/**
+ * Functions which enhance the customizer.
+ */
+require get_template_directory() . '/inc/customizer.php';
+
+
+/**
+ * Functions which add additional Woocommerce support.
+ */
+//require get_template_directory() . '/inc/woocommerce.php';
+
