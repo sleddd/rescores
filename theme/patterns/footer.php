@@ -15,8 +15,8 @@
 		<?php
 		printf(
 			/* Translators: WordPress link. */
-			esc_html__( 'Powered by %s', 'rs' ),
-			'<a href="' . esc_url( __( 'https://github.com/sleddd', 'rs' ) ) . '" rel="nofollow">a code cat.</a>'
+			esc_html__( 'Powered by %s', '_rs' ),
+			'<a href="' . esc_url( __( 'https://github.com/sleddd', '_rs' ) ) . '" rel="nofollow">a code cat.</a>'
 		)
 		?>
 		</p>

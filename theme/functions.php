@@ -27,7 +27,7 @@ if ( ! function_exists( '_rs_setup' ) ) :
 		 * If you're building a theme based on rescored, use a find and replace
 		 * to change 'rescored' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'rescored', get_template_directory() . '/languages' );
+		load_theme_textdomain( '_rs', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -50,8 +50,8 @@ if ( ! function_exists( '_rs_setup' ) ) :
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus(
 			array(
-				'menu-1' => __( 'Primary', 'rescored' ),
-				'menu-2' => __( 'Footer Menu', 'rescored' ),
+				'menu-1' => __( 'Primary', '_rs' ),
+				'menu-2' => __( 'Footer Menu', '_rs' ),
 			)
 		);
 
@@ -134,9 +134,9 @@ add_action( 'customize_register', '__return_true' );
 function _rs_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => __( 'Footer', 'rescored' ),
+			'name'          => __( 'Footer', '_rs' ),
 			'id'            => 'sidebar-1',
-			'description'   => __( 'Add widgets here to appear in your footer.', 'rescored' ),
+			'description'   => __( 'Add widgets here to appear in your footer.', '_rs' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',

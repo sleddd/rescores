@@ -41,7 +41,7 @@ if ( ! function_exists( '_rs_posted_by' ) ) :
 		printf(
 			/* translators: 1: posted by label, only visible to screen readers. 2: author link. 3: post author. */
 			'<span class="sr-only">%1$s</span><span class="author vcard"><a class="url fn n" href="%2$s">%3$s</a></span>',
-			esc_html__( 'Posted by', 'rescored' ),
+			esc_html__( 'Posted by', '_rs' ),
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			esc_html( get_the_author() )
 		);
@@ -55,7 +55,7 @@ if ( ! function_exists( '_rs_comment_count' ) ) :
 	function _rs_comment_count() {
 		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			/* translators: %s: Name of current post. Only visible to screen readers. */
-			comments_popup_link( sprintf( __( 'Leave a comment<span class="sr-only"> on %s</span>', 'rescored' ), get_the_title() ) );
+			comments_popup_link( sprintf( __( 'Leave a comment<span class="sr-only"> on %s</span>', '_rs' ), get_the_title() ) );
 		}
 	}
 endif;
@@ -76,23 +76,23 @@ if ( ! function_exists( '_rs_entry_meta' ) ) :
 			_rs_posted_on();
 
 			/* translators: used between list items, there is a space after the comma. */
-			$categories_list = get_the_category_list( __( ', ', 'rescored' ) );
+			$categories_list = get_the_category_list( __( ', ', '_rs' ) );
 			if ( $categories_list ) {
 				printf(
 					/* translators: 1: posted in label, only visible to screen readers. 2: list of categories. */
 					'<span class="sr-only">%1$s</span>%2$s',
-					esc_html__( 'Posted in', 'rescored' ),
+					esc_html__( 'Posted in', '_rs' ),
 					$categories_list // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				);
 			}
 
 			/* translators: used between list items, there is a space after the comma. */
-			$tags_list = get_the_tag_list( '', __( ', ', 'rescored' ) );
+			$tags_list = get_the_tag_list( '', __( ', ', '_rs' ) );
 			if ( $tags_list ) {
 				printf(
 					/* translators: 1: tags label, only visible to screen readers. 2: list of tags. */
 					'<span class="sr-only">%1$s</span>%2$s',
-					esc_html__( 'Tags:', 'rescored' ),
+					esc_html__( 'Tags:', '_rs' ),
 					$tags_list // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				);
 			}
@@ -108,7 +108,7 @@ if ( ! function_exists( '_rs_entry_meta' ) ) :
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers. */
-					__( 'Edit <span class="sr-only">%s</span>', 'rescored' ),
+					__( 'Edit <span class="sr-only">%s</span>', '_rs' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -137,23 +137,23 @@ if ( ! function_exists( '_rs_entry_footer' ) ) :
 			_rs_posted_on();
 
 			/* translators: used between list items, there is a space after the comma. */
-			$categories_list = get_the_category_list( __( ', ', 'rescored' ) );
+			$categories_list = get_the_category_list( __( ', ', '_rs' ) );
 			if ( $categories_list ) {
 				printf(
 					/* translators: 1: posted in label, only visible to screen readers. 2: list of categories. */
 					'<span class="sr-only">%1$s</span>%2$s',
-					esc_html__( 'Posted in', 'rescored' ),
+					esc_html__( 'Posted in', '_rs' ),
 					$categories_list // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				);
 			}
 
 			/* translators: used between list items, there is a space after the comma. */
-			$tags_list = get_the_tag_list( '', __( ', ', 'rescored' ) );
+			$tags_list = get_the_tag_list( '', __( ', ', '_rs' ) );
 			if ( $tags_list ) {
 				printf(
 					/* translators: 1: tags label, only visible to screen readers. 2: list of tags. */
 					'<span class="sr-only">%1$s</span>%2$s',
-					esc_html__( 'Tags:', 'rescored' ),
+					esc_html__( 'Tags:', '_rs' ),
 					$tags_list // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				);
 			}
@@ -169,7 +169,7 @@ if ( ! function_exists( '_rs_entry_footer' ) ) :
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers. */
-					__( 'Edit <span class="sr-only">%s</span>', 'rescored' ),
+					__( 'Edit <span class="sr-only">%s</span>', '_rs' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -261,8 +261,8 @@ if ( ! function_exists( '_rs_the_posts_navigation' ) ) :
 		the_posts_pagination(
 			array(
 				'mid_size'  => 2,
-				'prev_text' => __( 'Newer posts', 'rescored' ),
-				'next_text' => __( 'Older posts', 'rescored' ),
+				'prev_text' => __( 'Newer posts', '_rs' ),
+				'next_text' => __( 'Older posts', '_rs' ),
 			)
 		);
 	}

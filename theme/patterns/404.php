@@ -10,16 +10,16 @@
 <!-- /wp:spacer -->
 
 <!-- wp:heading {"level":1,"align":"wide"} -->
-<h1 class="alignwide"><?php echo esc_html_x( '404', 'Error code for a webpage that is not found.', 'rs' ); ?></h1>
+<h1 class="alignwide"><?php echo esc_html_x( '404', 'Error code for a webpage that is not found.', '_rs' ); ?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:group {"align":"wide","layout":{"type":"default"},"style":{"spacing":{"margin":{"top":"5px"}}}} -->
 <div class="wp-block-group alignwide" style="margin-top:5px">
 	<!-- wp:paragraph -->
-	<p><?php echo esc_html_x( 'This page could not be found.', 'Message to convey that a webpage could not be found', 'rs' ); ?></p>
+	<p><?php echo esc_html_x( 'This page could not be found.', 'Message to convey that a webpage could not be found', '_rs' ); ?></p>
 	<!-- /wp:paragraph -->
 
-	<!-- wp:search {"label":"<?php echo esc_html_x( 'Search', 'label', 'rs' ); ?>","placeholder":"<?php echo esc_attr_x( 'Search...', 'placeholder for search field', 'rs' ); ?>","showLabel":false,"width":100,"widthUnit":"%","buttonText":"<?php esc_attr_e( 'Search', 'rs' ); ?>","buttonUseIcon":true,"align":"center"} /-->
+	<!-- wp:search {"label":"<?php echo esc_html_x( 'Search', 'label', '_rs' ); ?>","placeholder":"<?php echo esc_attr_x( 'Search...', 'placeholder for search field', '_rs' ); ?>","showLabel":false,"width":100,"widthUnit":"%","buttonText":"<?php esc_attr_e( 'Search', '_rs' ); ?>","buttonUseIcon":true,"align":"center"} /-->
 </div>
 <!-- /wp:group -->
 

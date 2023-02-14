@@ -49,33 +49,33 @@ add_filter( 'comment_form_defaults', '_rs_comment_form_defaults' );
  */
 function _rs_get_the_archive_title() {
 	if ( is_category() ) {
-		$title = __( 'Category Archives: ', 'rescored' ) . '<span>' . single_term_title( '', false ) . '</span>';
+		$title = __( 'Category Archives: ', '_rs' ) . '<span>' . single_term_title( '', false ) . '</span>';
 	} elseif ( is_tag() ) {
-		$title = __( 'Tag Archives: ', 'rescored' ) . '<span>' . single_term_title( '', false ) . '</span>';
+		$title = __( 'Tag Archives: ', '_rs' ) . '<span>' . single_term_title( '', false ) . '</span>';
 	} elseif ( is_author() ) {
-		$title = __( 'Author Archives: ', 'rescored' ) . '<span>' . get_the_author_meta( 'display_name' ) . '</span>';
+		$title = __( 'Author Archives: ', '_rs' ) . '<span>' . get_the_author_meta( 'display_name' ) . '</span>';
 	} elseif ( is_year() ) {
-		$title = __( 'Yearly Archives: ', 'rescored' ) . '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'rescored' ) ) . '</span>';
+		$title = __( 'Yearly Archives: ', '_rs' ) . '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', '_rs' ) ) . '</span>';
 	} elseif ( is_month() ) {
-		$title = __( 'Monthly Archives: ', 'rescored' ) . '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'rescored' ) ) . '</span>';
+		$title = __( 'Monthly Archives: ', '_rs' ) . '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', '_rs' ) ) . '</span>';
 	} elseif ( is_day() ) {
-		$title = __( 'Daily Archives: ', 'rescored' ) . '<span>' . get_the_date() . '</span>';
+		$title = __( 'Daily Archives: ', '_rs' ) . '<span>' . get_the_date() . '</span>';
 	} elseif ( is_post_type_archive() ) {
 		$cpt   = get_post_type_object( get_queried_object()->name );
 		$title = sprintf(
 			/* translators: %s: Post type singular name */
-			esc_html__( '%s Archives', 'rescored' ),
+			esc_html__( '%s Archives', '_rs' ),
 			$cpt->labels->singular_name
 		);
 	} elseif ( is_tax() ) {
 		$tax   = get_taxonomy( get_queried_object()->taxonomy );
 		$title = sprintf(
 			/* translators: %s: Taxonomy singular name */
-			esc_html__( '%s Archives', 'rescored' ),
+			esc_html__( '%s Archives', '_rs' ),
 			$tax->labels->singular_name
 		);
 	} else {
-		$title = __( 'Archives:', 'rescored' );
+		$title = __( 'Archives:', '_rs' );
 	}
 	return $title;
 }
@@ -103,7 +103,7 @@ function _rs_continue_reading_link() {
 	if ( ! is_admin() ) {
 		$continue_reading = sprintf(
 			/* translators: %s: Name of current post. */
-			wp_kses( __( 'Continue reading %s', 'rescored' ), array( 'span' => array( 'class' => array() ) ) ),
+			wp_kses( __( 'Continue reading %s', '_rs' ), array( 'span' => array( 'class' => array() ) ) ),
 			the_title( '<span class="sr-only">"', '"</span>', false )
 		);
 
@@ -135,9 +135,9 @@ function _rs_html5_comment( $comment, $args, $depth ) {
 	$show_pending_links = ! empty( $commenter['comment_author'] );
 
 	if ( $commenter['comment_author_email'] ) {
-		$moderation_note = __( 'Your comment is awaiting moderation.', 'rescored' );
+		$moderation_note = __( 'Your comment is awaiting moderation.', '_rs' );
 	} else {
-		$moderation_note = __( 'Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved.', 'rescored' );
+		$moderation_note = __( 'Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved.', '_rs' );
 	}
 	?>
 	<<?php echo esc_attr( $tag ); ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $comment->has_children ? 'parent' : '', $comment ); ?>>
@@ -158,7 +158,7 @@ function _rs_html5_comment( $comment, $args, $depth ) {
 
 					printf(
 						/* translators: %s: Comment author link. */
-						wp_kses_post( __( '%s <span class="says">says:</span>', 'rescored' ) ),
+						wp_kses_post( __( '%s <span class="says">says:</span>', '_rs' ) ),
 						sprintf( '<b class="fn">%s</b>', wp_kses_post( $comment_author ) )
 					);
 					?>
@@ -173,14 +173,14 @@ function _rs_html5_comment( $comment, $args, $depth ) {
 						esc_html(
 							sprintf(
 							/* translators: 1: Comment date, 2: Comment time. */
-								__( '%1$s at %2$s', 'rescored' ),
+								__( '%1$s at %2$s', '_rs' ),
 								get_comment_date( '', $comment ),
 								get_comment_time()
 							)
 						)
 					);
 
-					edit_comment_link( __( 'Edit', 'rescored' ), ' <span class="edit-link">', '</span>' );
+					edit_comment_link( __( 'Edit', '_rs' ), ' <span class="edit-link">', '</span>' );
 					?>
 				</div><!-- .comment-metadata -->
 

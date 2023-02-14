@@ -44,7 +44,7 @@ add_action( 'after_setup_theme', '_rs_woocommerce_setup' );
  * @return void
  */
 function _rs_woocommerce_scripts() {
-	wp_enqueue_style( '_s-woocommerce-style', get_template_directory_uri() . '/woocommerce.css', array(), _RS_VERSION );
+	wp_enqueue_style( '_rs-woocommerce-style', get_template_directory_uri() . '/woocommerce.css', array(), _RS_VERSION );
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
 	$inline_font = '@font-face {
@@ -58,7 +58,7 @@ function _rs_woocommerce_scripts() {
 			font-style: normal;
 		}';
 
-	wp_add_inline_style( '_s-woocommerce-style', $inline_font );
+	wp_add_inline_style( '_rs-woocommerce-style', $inline_font );
 }
 add_action( 'wp_enqueue_scripts', '_rs_woocommerce_scripts' );
 
@@ -125,7 +125,7 @@ if ( ! function_exists( '_rs_woocommerce_wrapper_before' ) ) {
 }
 add_action( 'woocommerce_before_main_content', '_rs_woocommerce_wrapper_before' );
 
-if ( ! function_exists( '_s_woocommerce_wrapper_after' ) ) {
+if ( ! function_exists( '_rs_woocommerce_wrapper_after' ) ) {
 	/**
 	 * After Content.
 	 *
@@ -147,8 +147,8 @@ add_action( 'woocommerce_after_main_content', '_rs_woocommerce_wrapper_after' );
  * You can add the WooCommerce Mini Cart to header.php like so ...
  *
 	<?php
-		if ( function_exists( '_s_woocommerce_header_cart' ) ) {
-			_s_woocommerce_header_cart();
+		if ( function_exists( '_rs_woocommerce_header_cart' ) ) {
+			_rs_woocommerce_header_cart();
 		}
 	?>
  */
@@ -164,7 +164,7 @@ if ( ! function_exists( '_rs_woocommerce_cart_link_fragment' ) ) {
 	 */
 	function _rs_woocommerce_cart_link_fragment( $fragments ) {
 		ob_start();
-		_s_woocommerce_cart_link();
+		_rs_woocommerce_cart_link();
 		$fragments['a.cart-contents'] = ob_get_clean();
 
 		return $fragments;
@@ -172,7 +172,7 @@ if ( ! function_exists( '_rs_woocommerce_cart_link_fragment' ) ) {
 }
 add_filter( 'woocommerce_add_to_cart_fragments', '_rs_woocommerce_cart_link_fragment' );
 
-if ( ! function_exists( '_s_woocommerce_cart_link' ) ) {
+if ( ! function_exists( '_rs_woocommerce_cart_link' ) ) {
 	/**
 	 * Cart Link.
 	 *
@@ -182,11 +182,11 @@ if ( ! function_exists( '_s_woocommerce_cart_link' ) ) {
 	 */
 	function _rs_woocommerce_cart_link() {
 		?>
-		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', '_s' ); ?>">
+		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', '_rs' ); ?>">
 			<?php
 			$item_count_text = sprintf(
 				/* translators: number of items in the mini cart. */
-				_n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), '_s' ),
+				_n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), '_rs' ),
 				WC()->cart->get_cart_contents_count()
 			);
 			?>
@@ -211,7 +211,7 @@ if ( ! function_exists( '_rs_woocommerce_header_cart' ) ) {
 		?>
 		<ul id="site-header-cart" class="site-header-cart">
 			<li class="<?php echo esc_attr( $class ); ?>">
-				<?php _s_woocommerce_cart_link(); ?>
+				<?php _rs_woocommerce_cart_link(); ?>
 			</li>
 			<li>
 				<?php
