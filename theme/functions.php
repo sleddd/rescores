@@ -107,14 +107,14 @@ add_action( 'after_setup_theme', '_rs_setup' );
 function rs_add_fallback_ft_image( $html, $post_id ) {
 	if ( empty( $html ) ) {
 
-		$image_placeholder_url = get_stylesheet_directory_uri() . '/assets/images/placeholder-h-dark.jpeg';
+		$image_placeholder_url    = get_stylesheet_directory_uri() . '/assets/images/placeholder-h-dark.jpeg';
 		$image_placeholder_width  = '580';
 		$image_placeholder_height = '300';
 
 		if ( is_single() || is_page() ) {
 			$image_placeholder_width  = '1600';
 			$image_placeholder_height = '500';
-			$image_placeholder_url = get_stylesheet_directory_uri() . '/assets/images/placeholder-banner.png';
+			$image_placeholder_url    = get_stylesheet_directory_uri() . '/assets/images/placeholder-banner.png';
 		}
 		$html = '<img src="' . esc_url( $image_placeholder_url ) . '" width="' . (int) $image_placeholder_width . '" height="' . (int) $image_placeholder_height . '" loading="lazy" alt="' . get_the_title( $post_id ) . '" />';
 	}
@@ -160,6 +160,17 @@ function _rs_scripts() {
 add_action( 'wp_enqueue_scripts', '_rs_scripts' );
 
 /**
+ * Enqueue css block style overrides in editor.
+ */
+function _rs_admin_scripts() {
+	if ( isset( $_GET['post'] ) || isset( $_GET['postId'] ) ) {
+		wp_enqueue_style( '_rs-block-editor-style', get_stylesheet_uri(), array(), _RS_VERSION );
+	}
+}
+add_action( 'enqueue_block_editor_assets', '_rs_admin_scripts' );
+
+
+/**
  * Add the block editor class to TinyMCE.
  *
  * This allows TinyMCE to use Tailwind Typography styles.
@@ -192,5 +203,4 @@ require get_template_directory() . '/inc/customizer.php';
 /**
  * Functions which add additional Woocommerce support.
  */
-//require get_template_directory() . '/inc/woocommerce.php';
-
+// require get_template_directory() . '/inc/woocommerce.php';

@@ -16,8 +16,6 @@
 }
 
 .wp-block-navigation {
-	flex: 1;
-	@apply items-start;
 
 	.submenu-container,
 	&__submenu-container,
@@ -74,8 +72,8 @@
 	}	
 
 	&__responsive-container-open {
-		position: absolute;
-		top: 0px;
+		position: relative;
+		top: -5px;
 	}
 
 	&__responsive-close {
