@@ -116,7 +116,11 @@ function rs_add_fallback_ft_image( $html, $post_id ) {
 			$image_placeholder_height = '500';
 			$image_placeholder_url    = get_stylesheet_directory_uri() . '/assets/images/placeholder-banner.png';
 		}
-		$html = '<img src="' . esc_url( $image_placeholder_url ) . '" width="' . (int) $image_placeholder_width . '" height="' . (int) $image_placeholder_height . '" loading="lazy" alt="' . get_the_title( $post_id ) . '" />';
+		if ( is_shop() || is_product() || is_cart() || is_checkout() || is_account_page() ) {
+			$html = '';
+		} else {
+			$html = '<img src="' . esc_url( $image_placeholder_url ) . '" width="' . (int) $image_placeholder_width . '" height="' . (int) $image_placeholder_height . '" loading="lazy" alt="' . get_the_title( $post_id ) . '" />';
+		}
 	}
 	return $html;
 }
