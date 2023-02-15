@@ -156,7 +156,7 @@
 			margin-top: 2rem;
 		}
 	}	
-
+	
 	.wp-block-navigation-submenu__toggle[aria-expanded=false] + .submenu-container {
 		visibility: hidden !important;
 		height: 0 !important;
@@ -226,4 +226,8 @@
 
 .wp-block-button {
 	padding: 0.5em;
+}
+
+.wp-block-query-pagination {
+	@apply border-t pt-2 pb-4;
 }

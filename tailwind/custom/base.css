@@ -38,32 +38,31 @@ a {
 }
 
 h1 { 
-	@apply text-5xl font-extrabold;
-	@apply leading-snug;
+	@apply text-5xl font-extrabold leading-normal;
 }
 
 h2 {
-	@apply text-4xl font-bold;
+	@apply text-4xl font-bold leading-normal;
 }
 
 h3 {
-	@apply text-3xl font-bold;
+	@apply text-3xl font-bold leading-normal;
 }
 
 h4 {
-	@apply text-2xl font-bold;
+	@apply text-2xl font-bold leading-normal;
 }
 
 h5 {
-	@apply text-xl font-bold;
+	@apply text-xl font-bold leading-normal;
 }
 
 h6 {
-	@apply text-lg font-bold;
+	@apply text-lg font-bold leading-normal;
 }
 
 header.custom-block-header  {
-	@apply flex flex-wrap bg-white p-4 mb-4 max-w-none w-full sticky top-0 z-50 shadow-md;
+	@apply flex flex-wrap bg-white p-4 mb-0 max-w-none w-full sticky top-0 z-50 shadow-md;
 
 	.logo-container {
 		@apply flex items-center flex-row flex-nowrap w-full;
@@ -99,11 +98,33 @@ header.custom-block-header  {
 		}
 	}
 
-	.site-description {
-		display: none;
-		@apply text-sm italic m-0 p-0;
+	.site-info {
+		min-width: 240px;
+		@apply pt-0 mt-0;
+		
+		.site-title {
+			@apply pt-0 mt-0 text-2xl font-extrabold leading-snug;
+			
+		}
+
+		.site-description {
+			@apply text-sm italic m-0 p-0;
+		}
 	}
 
+}
+
+footer, .footer {
+	@apply bg-gray-900 text-slate-50 mt-4;
+
+	a {
+		@apply text-slate-400;
+	}
+	.wp-block-site-title {
+		a {
+			@apply text-slate-400;
+		}
+	}
 }
 
 blockquote {
@@ -228,3 +249,4 @@ dl {
 .wp-caption-text {
 	@apply text-gray-dark text-sm pt-2 pb-2 italic;
 }
+
