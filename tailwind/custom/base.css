@@ -19,6 +19,10 @@ body .is-layout-flow > * + * {
     margin-block-start: 10px;
     margin-block-end: 0;
 }
+
+#content {
+	@apply pt-10;
+}
  
 a {
 	@apply text-link-active;
@@ -233,20 +237,33 @@ dl {
 	}
 }
 
-
 .aligncenter {
 	@apply m-auto;
 }
 
 .alignleft {
-	@apply float-left m-4;
+	@apply inline float-left align-top m-3 mt-0 ml-0;
 }
 
 .alignright {
-	@apply float-right m-4;
+	@apply inline float-right align-top m-3 mt-0 mr-0;
 }
 
 .wp-caption-text {
 	@apply text-gray-dark text-sm pt-2 pb-2 italic;
 }
 
+.wp-block-post-content  {
+	&:after {
+		display:block;
+		content: "";
+		clear: both;
+	}
+
+	p:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+}
