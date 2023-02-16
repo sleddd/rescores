@@ -3,30 +3,28 @@
  * and mobile menu toggling.
  *
  */
-
 (function ($) {
-	// Dropdown action for main menu.
-	$('.menu-item-has-children a').on('click', function (e) {
-		//TODO: Add Aria changes.
-		$(this).parent().toggleClass('menu-item-open');
+
+	// Dropdown trigger events.
+	$( '.menu-item-has-children a').on('click', function( e ) { return openDropdownMenu( e ) });
+	$( '.menu-item-has-children').hover( function(e) { $( this ).find('a').trigger('click'); });
+
+	// Handles dropdown functionality for menu items.
+    function openDropdownMenu(e) {
+		//TODO: Add aria changes.
+		$( e.target ).parent().find('.sub-menu').first().toggleClass('sub-menu--open');
 		if (
 			e.detail === 1 &&
-			$(this).parent().hasClass('menu-item-has-children')
+			$( e.target ).parent().hasClass('menu-item-has-children')
 		) {
 			// Single click - stop event.
 			e.preventDefault();
 		}
-	});
+	}
 
-    // Trigger dropdown on hover.
-	$('.menu-item-has-children a').on('mouseenter', function (e) {
-		$(this).trigger('click');
-	});
-
-    //TODO: add mouseout removal of hover.
-
-	// Mobile Menu toggle button event.
+	// Mobile Menu toggle event.
 	$('.menu-toggle').on('click', function (e) {
-		$('header .navbar').toggleClass('mobile-menu-open');
+		$('header .navbar').toggleClass('navbar--open');
 	});
-})(jQuery);
+
+})( jQuery );

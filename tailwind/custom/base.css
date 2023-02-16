@@ -57,7 +57,7 @@ body .is-layout-flow > * + * {
 			}
 		}
 
-		&.mobile-menu-open {
+		&.navbar--open {
 			@apply absolute w-full h-full z-10; 
 			top: 0;
 			left: 0;
@@ -92,49 +92,34 @@ body .is-layout-flow > * + * {
 
 				ul {
 					@apply bg-white flex-col flex-nowrap justify-start items-start visible h-auto;
-					width: calc( 100% - 30px );
+					width: calc( 100% - 2rem );
 					padding-top: 30px;
-					padding-right: 0px;
+					margin-right: 1rem;
+					margin-left: 1rem;
 
 					li {
-						@apply flex w-full flex-row justify-start items-start border-b border-slate-200;
+						@apply flex w-full flex-col justify-start items-start border-b border-slate-200;
 						flex: 0 0 100%;
-						padding: 0.5rem 0;
 						margin: 0;
+						padding: 0.5rem 0;
 
-						&:first-child {
-							@apply flex-row;
-						}
-
-						ul {
+						.sub-menu {
 							@apply hidden h-0 w-0 m-0 p-0;
 							visibility: hidden;
-						}
+							padding-top: 0;
 
-						&.menu-item-open {
-							flex-direction: column;
-							ul {
+							&--open {
 								@apply relative visible block h-auto w-full !important;
 								box-shadow: 0 0 0;
-								padding: 1rem 0;
-								margin: 1rem 0;
-								background: rgba( 0,0,0,0.04);
-								left: 0;
-								border-radius: 0;
-
-								li {
-									padding: 0.5rem 1rem;
-								}
 							}
 						}
 					}
 				}
-
 			}
 		}
 
 		ul {
-			@apply absolute flex flex-wrap flex-row gap-4 lg:invisible lg:h-0;
+			@apply relative flex flex-wrap flex-row lg:invisible lg:h-0;
 			top: 0;
 			right: 2rem;
 	
@@ -142,7 +127,7 @@ body .is-layout-flow > * + * {
 				@apply relative flex list-none pl-0;
 	
 				a {
-					@apply flex no-underline pl-0;
+					@apply flex no-underline pr-3 pl-3;
 				}
 
 				&.menu-item-has-children {
@@ -157,35 +142,19 @@ body .is-layout-flow > * + * {
 					}		
 				}
 				
-				ul {
-					@apply h-0 w-0 invisible;
+				.sub-menu {
+					@apply absolute h-0 w-0 flex flex-col flex-nowrap bg-white z-10 top-4 left-0 p-1 invisible;
 					@apply pl-0 !important;
 					max-height: auto;
 
 					li {
-						@apply m-0 p-0;
+						@apply m-0 p-0 pt-1 pb-1;
 					}
-				}
 
-				&.menu-item-open {
-					ul {
+					&--open {
 						@apply visible h-auto w-full;
-						display: flex;
-						flex-direction: column;
-						flex-wrap: nowrap;
-						background: #fff;
-						z-index: 10;
-						margin-top: 2rem;
-						left: -1rem;
-						right: 0;
-						width: 150%;
-						padding: 0.5rem;
-						border-radius: 5px;
-						box-shadow: 2px 2px 7px rgba( 0,0,0, 0.4);
-
+						
 						li {
-							margin: 0;
-							padding: 0 1rem 0.5rem 1rem;
 							border-bottom: 1px solid #ededed;
 
 							&:last-of-type {
@@ -193,7 +162,7 @@ body .is-layout-flow > * + * {
 							}
 						}
 					}
-				}
+				}	 
 			}
 		}	
 	}
