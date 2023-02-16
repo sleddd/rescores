@@ -22,7 +22,8 @@
 		"postcss-simple-vars": "^7.0.1",
 		"prettier": "^2.8.2",
 		"prettier-plugin-tailwindcss": "^0.2.1",
-		"tailwindcss": "^3.2.4"
+		"tailwindcss": "^3.2.4",
+		"tw-elements": "^1.0.0-alpha13"
 	},
 	"scripts": {
 		"development:tailwind:frontend": "npx tailwindcss --postcss -i ./tailwind/tailwind.css -c ./tailwind/tailwind.config.js -o ./theme/style.css",
@@ -48,5 +49,8 @@
 		"zip": "node node_scripts/zip.js rescored",
 		"bundle": "run-s production zip"
 	},
-	"prettier": "@wordpress/prettier-config"
+	"prettier": "@wordpress/prettier-config",
+	"dependencies": {
+		"flowbite": "^1.6.3"
+	}
 }

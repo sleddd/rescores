@@ -208,3 +208,10 @@ require get_template_directory() . '/inc/customizer.php';
  * Functions which add additional Woocommerce support.
  */
 // require get_template_directory() . '/inc/woocommerce.php';
+
+
+add_filter( 'body_class','_rs_body_classes' );
+function _rs_body_classes( $classes ) {
+    $classes[] = 'prose';
+    return $classes;
+}
