@@ -156,6 +156,8 @@ add_action( 'widgets_init', '_rs_widgets_init' );
 function _rs_scripts() {
 	wp_enqueue_style( '_rs-style', get_stylesheet_uri(), array(), _RS_VERSION );
 	wp_enqueue_script( '_rs-script', get_template_directory_uri() . '/js/script.min.js', array(), _RS_VERSION, true );
+	wp_enqueue_script( '_rs-navigation-script', get_template_directory_uri() . '/js/navigation.js', array(), _RS_VERSION, true );
+
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -189,6 +191,20 @@ function _rs_tinymce_add_class( $settings ) {
 add_filter( 'tiny_mce_before_init', '_rs_tinymce_add_class' );
 
 /**
+ * Adds the main tailwind text class to the body classes.
+ *
+ *
+ * @param array $classes
+ * @return array
+ */
+function _rs_body_classes( $classes ) {
+	$classes[] = 'prose';
+	return $classes;
+}
+add_filter( 'body_class', '_rs_body_classes' );
+
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -208,10 +224,3 @@ require get_template_directory() . '/inc/customizer.php';
  * Functions which add additional Woocommerce support.
  */
 // require get_template_directory() . '/inc/woocommerce.php';
-
-
-add_filter( 'body_class','_rs_body_classes' );
-function _rs_body_classes( $classes ) {
-    $classes[] = 'prose';
-    return $classes;
-}
