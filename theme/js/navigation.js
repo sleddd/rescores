@@ -43,7 +43,7 @@
 		if ( $( e.target ).parent().find('.sub-menu').first().hasClass('sub-menu--open') ) {
 			// Close child menus.
 			$( e.target ).parent().find('.sub-menu').first().find('.sub-menu').removeClass('sub-menu--open');
-			$( e.target ).parent().find('.sub-menu').first().find('.sub-menu').attr('aria-expanded', 'false');
+			$( e.target ).parent().find('.menu-item-has-children a').attr('aria-expanded', 'false');
 			// Close parent.
 			$( e.target ).parent().find('.sub-menu').first().removeClass('sub-menu--open');
 			$( e.target ).attr('aria-expanded', 'false');
