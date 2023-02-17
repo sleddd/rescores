@@ -5,17 +5,17 @@
  */
 (function ($) {
 
-	$( '.menu-item-has-children a').each( function( index ) {
-		$( this ).attr('role', 'button');
-		$( this ).attr('aria-haspopup', 'listbox');
-		$( this ).attr('aria-expanded', 'false');
-		$( this ).attr('aria-labelledby', `menu-listbox-${index.toString()}` );
-		$( this ).attr('aria-label', `Menu Listbox Dropdown ${index.toString()}` );
-		$( this ).attr('id', `menu-listbox-${index.toString()}` );
+	$( '.menu-item-has-children').each( function( index ) {
+		$( this ).find('a').first().attr('role', 'button');
+		$( this ).find('a').first().attr('aria-haspopup', 'listbox');
+		$( this ).find('a').first().attr('aria-expanded', 'false');
+		$( this ).find('a').first().attr('aria-labelledby', `menu-listbox-${index.toString()}` );
+		$( this ).find('a').first().attr('aria-label', `Menu Listbox Dropdown ${index.toString()}` );
+		$( this ).find('a').first().attr('id', `menu-listbox-${index.toString()}` );
+		$( this ).find('a').first().on('click', function( e ) { return toggleDropdownMenu( e ) });
 	});
 
 	// Dropdown trigger events.
-	$( '.menu-item-has-children a').on('click', function( e ) { return toggleDropdownMenu( e ) });
 
 	// Dropdown on hover.
 	$( '.menu-item-has-children').on( 'mouseenter', function( e ) {
@@ -38,12 +38,6 @@
 	// Handles dropdown functionality for menu items.
     function toggleDropdownMenu( e ) {
 
-		// Ensures that the top anchor shows drodown first, then if double clicked,
-		// it continues on to the link url.
-		// if ( e.detail === 1 && $( e.target ).parent().hasClass('menu-item-has-children') ) {
-		// 	// Single click - stop event.
-		// 	e.preventDefault();
-		// }
 		e.preventDefault();
 
 		if ( $( e.target ).parent().find('.sub-menu').first().hasClass('sub-menu--open') ) {
