@@ -86,7 +86,7 @@
 						} 
 
 						.sub-menu {
-							@apply hidden h-0 w-0 m-0 p-0;
+							@apply hidden h-0 w-0 m-0 p-0 !important;
 
 							&--open {
 								@apply relative visible block h-auto !important;
@@ -103,6 +103,13 @@
 								}
 							}
 						}
+
+                        .sub-menu--open { 
+                            @apply border-t border-b-0 border-slate-200;
+                            li {
+                                @apply border-0;
+                            }
+                        }
 					}
 				}
 			}
@@ -127,12 +134,14 @@
 					padding-right: calc( 16px + .5rem );
 					&:after {
 						@apply absolute;
-						top: 10px;
+						top: 8px;
 						right: 5px;
-						width: 16px;
+						width: 13px;
 						height: 13px;
 						margin-left: 5px;
-						margin-top: 2px;
+                        margin-right: 2px;
+						margin-top: 1px;
+                        stroke: #000;
 						content: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19.5 8.25l-7.5 7.5-7.5-7.5' /%3E%3C/svg%3E%0A");	
 					}		
 				}
@@ -144,46 +153,57 @@
 					li {
 						@apply m-0 p-0;
 					}
+
+                    .menu-item-has-children { 
+                        &:after {
+                            transform: rotate(-90deg);
+                        }
+                    }
 				}
 
 				.sub-menu--open {
 					@apply visible h-auto;
-					width: calc(100% + 16px );
+					width: calc( 100% + 16px );
 					z-index: 6;
+                    @apply border-t border-b border-slate-200;
 
 					li {
-						border-bottom: 1px solid #ededed;
+                        @apply border-l border-r border-b border-slate-200;
 
 						&:last-of-type {
 							border-bottom: 0;
 						}
 
 						.sub-menu { 
-							&--open {
-								position: absolute;
-								top: 0;
-								left: 100%;
-								width: 100%;
-								@apply bg-slate-100;
-							}
+                            transition: all .3s ease-in-out;
+                            position: absolute;
+                            top: 0;
+                            left: 100%;
+                            width: 0;
+                            @apply bg-slate-100;
+                            opacity: 0;
+                            overflow: hidden;
+
+                            &--open {
+                                width: 100%;
+                                opacity: 1;
+                            }
 						}
 					}
 				}
-
-                &:nth-last-child(-1n+2),
+ 
+                /*&:nth-last-child(-1n+2),*/
                 &:nth-last-child(-1n+1) {
                     .sub-menu--open {
                         li {
                             .sub-menu {
-                                &--open {
-                                    left: auto;
-                                    right: 100%;
-                                }
+                                left: auto;
+                                right: 100%;
                             }
                         }
                     }
                 }
 			}
-		}	
+		}
 	}
 }
