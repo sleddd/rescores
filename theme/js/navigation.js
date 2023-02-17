@@ -21,7 +21,7 @@
 	$( '.menu-item-has-children').on( 'mouseenter', function( e ) {
 		var self = this;
 		setTimeout( function() {
-			if ( ! $('.navbar').hasClass('navbar--open') ) {
+			if ( ! $('header .navbar').hasClass('navbar--open') ) {
 				$( self ).find('a').first().trigger('click');
 			}
 		}, 100 );
@@ -30,11 +30,9 @@
 	// Dropdown on hover end.
 	$( '.menu-item-has-children').on( 'mouseleave', function( e ) {
 		var self = this; 
-		setTimeout( function() {
-			if ( ! $('.navbar').hasClass('navbar--open') ) {
-				$( self ).find('a').first().trigger('click');
-			}
-		}, 100 );
+		if ( ! $('header .navbar').hasClass('navbar--open') ) {
+			$( self ).find('a').first().trigger('click');
+		}
 	});
 
 	// Handles dropdown functionality for menu items.
