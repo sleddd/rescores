@@ -85,4 +85,11 @@
 			$('#navbar .menu').attr('data-menubar-item-expanded', 'true');
 		}
 	}
+
+	// Default mobile helping
+	$('.open-on-hover-click').hover( function(e) {
+	    $( this ).find('button').first().attr('aria-expanded', function (i, attr) {
+			return attr == 'true' ? 'false' : 'true'
+		});
+	});
 })( jQuery );
