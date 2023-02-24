@@ -55,12 +55,15 @@
 			// Close child menus.
 			$( e.target ).parent().find('.sub-menu').first().find('.sub-menu').removeClass('sub-menu--open');
 			$( e.target ).parent().find('.menu-item-has-children a').first().attr('aria-expanded', 'false');
+			$( e.target ).parent().find('.menu-item-has-children a').first().removeClass('menu-item-has-children--down');
 			// Close parent.
 			$( e.target ).parent().find('.sub-menu').first().removeClass('sub-menu--open');
 			$( e.target ).attr('aria-expanded', 'false');
+			$( e.target ).parent().removeClass('menu-item-has-children--down');
 		} else {
 			$( e.target ).parent().find('.sub-menu').first().addClass('sub-menu--open');
 		    $( e.target ).attr('aria-expanded', 'true');
+			$( e.target ).parent().addClass('menu-item-has-children--down');
 		}
 	}
 
