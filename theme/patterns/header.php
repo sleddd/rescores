@@ -19,21 +19,21 @@
 <!-- /wp:group -->
 
 <!-- wp:html -->
-<nav class="navbar" id="navbar">
-    <button class="menu-toggle" aria-controls="navbar" aria-expanded="false" aria-label="Toggle open mobile navbar menu items">
-        <div class="sr-only"><?php esc_html_e( 'Mobile Menu Toggle Button', '_rs' ); ?></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </button>
-    <?php
-    wp_nav_menu(
-        array(
-            'theme_location' => 'menu-1',
-            'menu_id'        => 'primary-menu',
-        )
-    );
-    ?>
+<nav aria-label="<?php _e( 'Primary Site Navigation', '_rs' ); ?>" class="navbar" id="navbar">
+	<button class="menu-toggle" aria-controls="primary-menu" aria-label="Toggle open primary menu">
+		<div class="sr-only"><?php esc_html_e( 'Mobile Menu Toggle Button', '_rs' ); ?></div>
+		<div class="bar"></div>
+		<div class="bar"></div>
+		<div class="bar"></div>
+	</button>
+	<?php
+	wp_nav_menu(
+		array(
+			'theme_location' => 'menu-1',
+			'menu_id'        => 'primary-menu',
+		)
+	);
+	?>
 </nav>
 <!-- /wp:html --></header>
 <!-- /wp:group -->
