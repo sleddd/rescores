@@ -6,26 +6,26 @@
 (function ($) {
 
 	// All list items marked role = none.
-	$('#navbar li').attr('role', 'none');
+	$('.rs-header #navbar li').attr('role', 'none');
 	// Each a tag marked role = menuitem.
-	$('#navbar li a').attr('role','menuitem');
+	$('.rs-header #navbar li a').attr('role','menuitem');
 	// Each submenu marked role = menu.
-	$('#navbar ul').attr('role','menu');
+	$('.rs-header #navbar ul').attr('role','menu');
 	// The main menu gets a role of menubar, label, and expanded attr.
-	$('#navbar .menu').attr('role','menubar');
-	$('#navbar .menu').attr('aria-label','Primary Site Navigation');
+	$('.rs-header #navbar .menu').attr('role','menubar');
+	$('.rs-header #navbar .menu').attr('aria-label','Primary Site Navigation');
 	
 	// On window resize check the data expanded attribute for the menubar.
 	$(window).on('resize', function(){ 
-		if ( $('#navbar').hasClass('navbar--open') ) {
-			$('#navbar .menu').attr('data-menubar-item-expanded', 'true');
+		if ( $('.rs-header #navbar').hasClass('navbar--open') ) {
+			$('.rs-header #navbar .menu').attr('data-menubar-item-expanded', 'true');
 		} else {
 			// If menu toggle hidden - navbar is expanded.
-			if ( 'none' == $('#navbar .menu-toggle').css('display') ) {
-				$('#navbar .menu').attr('data-menubar-item-expanded', 'true');
+			if ( 'none' == $('.rs-header #navbar .menu-toggle').css('display') ) {
+				$('.rs-header #navbar .menu').attr('data-menubar-item-expanded', 'true');
 			} else {
 				// Navbar is closed.
-				$('#navbar .menu').attr('data-menubar-item-expanded', 'false');
+				$('.rs-header #navbar .menu').attr('data-menubar-item-expanded', 'false');
 			}
 		}
 	});
@@ -41,7 +41,7 @@
 	// Dropdown on hover.
 	$( '.menu-item-has-children').hover( function( e ) {
 		// Removes menu hover effect for mobile.
-		if ( 'none' == $('#navbar .menu-toggle').css('display') ) {
+		if ( 'none' == $('.rs-header #navbar .menu-toggle').css('display') ) {
 			$( this ).find('a').first().trigger('click');
 		}
 	});
@@ -87,9 +87,31 @@
 	}
 
 	// Default mobile helping
+	// Adds aria expanding true/false for hover on desktop.
 	$('.open-on-hover-click').hover( function(e) {
-	    $( this ).find('button').first().attr('aria-expanded', function (i, attr) {
-			return attr == 'true' ? 'false' : 'true'
-		});
+		if ( 'none' == $('.wp-block-navigation__responsive-container-close').css('display') ) {
+			$( this ).find('button').first().attr('aria-expanded', function (i, attr) {
+				return attr == 'true' ? 'false' : 'true'
+			});
+		}
 	});
+
+
+	$('.open-on-hover-click a').on('click', function( e ) {
+		defaultMobileMenuOverride( e );
+	});
+	$('.open-on-hover-click a').hover(function( e ) {
+		e.preventDefault();
+	});
+
+	function defaultMobileMenuOverride(e) {
+		if ( 'none' != $('.wp-block-navigation__responsive-container-close').css('display') ) {
+			if ( e.detail !== 2 ) {
+				e.preventDefault();
+				$( e.target ).parent().find('button').first().attr('aria-expanded', function (i, attr) {
+					return attr == 'true' ? 'false' : 'true'
+				});
+			}
+		}
+	}
 })( jQuery );

@@ -6,7 +6,7 @@
  */
 ?>
 <!-- wp:group {"tagName":"header","className":"alignfull header shadow-lg bg-gray-50"} -->
-<header class="wp-block-group alignfull header rs-header shadow-lg bg-gray-50"><!-- wp:group {"align":"full","style":{"spacing":{"padding":{"bottom":"0","top":"0"}}},"layout":{"type":"flex","justifyContent":"space-between"}} -->
+<header class="wp-block-group alignfull rs-header shadow-lg bg-gray-50"><!-- wp:group {"align":"full","style":{"spacing":{"padding":{"bottom":"0","top":"0"}}},"layout":{"type":"flex","justifyContent":"space-between"}} -->
 <div class="wp-block-group alignfull" style="padding-top:0;padding-bottom:0"><!-- wp:group {"className":"site-info","layout":{"type":"flex"}} -->
 <div class="wp-block-group site-info"><!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:template-part {"slug":"logo","theme":"rescored/theme","area":"uncategorized"} /--></div>
