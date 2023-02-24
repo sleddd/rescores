@@ -40,12 +40,10 @@
 
 	// Dropdown on hover.
 	$( '.menu-item-has-children').hover( function( e ) {
-		var self = this;
-		setTimeout( function() {
-			if ( ! $('#navbar').hasClass('navbar--open') ) {
-				$( self ).find('a').first().trigger('click');
-			}
-		}, 100 );
+		// Removes menu hover effect for mobile.
+		if ( 'none' == $('#navbar .menu-toggle').css('display') ) {
+			$( this ).find('a').first().trigger('click');
+		}
 	});
 
 	// Handles dropdown functionality for menu items.
