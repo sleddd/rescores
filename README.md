@@ -1,4 +1,4 @@
-Rescored - Under Construction
+Rescores - Under Construction
 ========
 
 A remodel of an old WordPress theme for blocks using Tailwind. It is a hybrid theme that supports HTML, PHP, FSE, and the customizer.
