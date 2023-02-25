@@ -29,17 +29,17 @@ The idea, is that adding Tailwind gives you the flexibility to build whatever yo
 
 **Ok, but PHP and HTML?** 
 
-A block theme using all HTML should load faster and help separate backend code from frontend templating. However, WordPress may sometimes get messy as blocks are still new to the game and have certain design and other limitations. You can easily switch this theme from a hybrid to a standard block theme, by removing the php template files and moving the template part html for templates such as header, footer, single, etc to the the templates folder or you can use it as is and build a more classic page template or theme with patterns and standard PHP templates. Rescores was my way of exploring the line between block and classic themes. It was meant to provide a way to help build both quickly.
+A block theme using all HTML should load faster and help separate backend code from frontend templating. However, WordPress may sometimes get messy as blocks are still new to the game and have certain design and other limitations. You can easily switch this theme from a hybrid to a standard block theme, by removing the php template files and moving the template part html for templates such as header, footer, single, etc to the the templates folder or you can use it as-is and build a more classic page template or PHP pattern. Rescores was my way of exploring the line between block and classic themes. It was meant to provide a way to help build both quickly.
 
 ---
 
 **More info...**
 
-View a searchable index of Tailwind utility classes and documentation here: https://tailwindcss.com/
+Tailwind utility classes and documentation: https://tailwindcss.com/
 
-To learn more about how Tailwind works visit: https://tailwindcss.com/ or https://kinsta.com/blog/tailwind-css/
+How Tailwind works: https://tailwindcss.com/ or https://kinsta.com/blog/tailwind-css/
 
-To learn more about theme.json works visit: https://www.elmastudio.de/en/theme-json-for-wordpress-block-themes-explained/ or https://make.wordpress.org/core/2021/06/25/introducing-theme-json-in-wordpress-5-8/
+How theme.json works: https://www.elmastudio.de/en/theme-json-for-wordpress-block-themes-explained/ or https://make.wordpress.org/core/2021/06/25/introducing-theme-json-in-wordpress-5-8/
 
 Rescores is a transitional and experimental starter theme for quick development. It is very much a work in progress and if you find it helpful, feel free to use it how you see fit. The theme has a very minimal barebones style, but here are a couple current screenshots: 
 
