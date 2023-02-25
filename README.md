@@ -1,7 +1,7 @@
-Rescores - A hybrid Block/Classic Starter Theme ( FSE and customizer )
+Rescores - Hybrid WordPress Starter for a Block or Classic Theme ( FSE and Customizer )
 ========
 
-Rescores is a very minimally styled hybrid block starter theme that supports use of Full Site Editor ( FSE ) and global styles as well as standard legacy features like the customizer. 
+Rescores is a very minimally-styled hybrid WordPress starter theme that supports use of Full Site Editor ( FSE ) and global styles as well as standard legacy/classic features like the customizer. 
 
 It is based on Underscores ( https://underscores.me ) and UnderscoreTW ( https://underscoretw.com/ ). In a nutshell, it is a remodel of the old themes for modern builds. 
 
@@ -15,13 +15,19 @@ Rescores is a transitional theme that allows you to leverage both classic and mo
 
 Tailwind, at it's heart, is a collection of utility CSS classes that can be used to design and layout new sites quickly. Unlike other frameworks, such as Bootstrap, you use only what you need, but still have everything at your fingertips. In addition, Tailwind has a simple config that allows you to 'theme' sites without digging into the CSS. 
 
-WordPress uses theme.json in blocks themes to control styles much like a Tailwind config file. Connecting the two, rescores lets you define your basic styles for blocks and elements like heading tags, anchor tags, etc in the theme.json and then converts that into global CSS that can be loaded via the standard style.css file. While theme.json generally only applies to blocks, this let's you leverage the block styles for a global or legacy/classic theme.
+WordPress uses theme.json in block themes to control styles much like a Tailwind config file. Connecting the two, rescores lets you define your basic styles for blocks and elements like heading tags, anchor tags, etc in the theme.json and then converts that into global CSS that can be loaded via the standard style.css file. While theme.json generally only applies to blocks, this let's you leverage the block styles for a global or legacy/classic theme.
 
 There are pros and cons to this approach. Block themes keep CSS contained to the blocks and pull in less CSS than a global stylesheet, however, sometimes as other plugins, blocks, and components get added, having some basic overarcing structures to cover things like heading and anchor tags can be helpful in maintaining branding styles. In addition, Tailwind utility classes can help you override a single block margin or pesky padding with a utility class if needed.
 
 The idea, is that adding Tailwind gives you the flexibility to build whatever you need without having to fully re-invent the wheel and it connects the old to the new through the theme.json and the Tailwind config.
 
-View a searchable index of utility classes here: https://tailwindcss.com/
+## Ok, but PHP and HTML? 
+
+A block theme using all HTML should load faster and help separate backend code from frontend templating. However, WordPress may sometimes get messy as blocks are still new to the game and have certain design and other limitations. You can easily switch this theme from a hybrid to a standard block theme, by removing the php template files and moving the template part html for templates such as header, footer, single, etc to the the templates folder or you can use it as is and build a more classic page template or theme with patterns and standard PHP templates. Rescores was my way of exploring the line between block and classic themes. It was meant to provide a way to help build both quickly.
+
+## More info...
+
+View a searchable index of Tailwind utility classes and documentation here: https://tailwindcss.com/
 
 To learn more about how Tailwind works visit: https://tailwindcss.com/ or https://kinsta.com/blog/tailwind-css/
 
