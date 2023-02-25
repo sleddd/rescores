@@ -1,4 +1,4 @@
-Rescores - A hybrid Block/Legacy Starter Theme that supports Full Site Editor ( FSE ) and the customizer.
+Rescores - A hybrid Block/Classic Starter Theme ( FSE and customizer )
 ========
 
 Rescores is a very minimally styled hybrid block starter theme that supports use of Full Site Editor ( FSE ) and global styles as well as standard legacy features like the customizer. 
