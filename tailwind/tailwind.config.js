@@ -24,6 +24,21 @@ if ('editor' === process.env._rs_TARGET) {
 		'./theme/**/**/*.php',
 		'./theme/theme.json',
 	],
+	safelist: [
+		'text-sm',
+		'text-md',
+		'text-lg',
+		'mt-0',
+		'mb-0',
+		'mr-0',
+		'ml-0',
+		'm-0',
+		'pt-0',
+		'pb-0',
+		'pr-0',
+		'pl-0',
+		'p-0',
+	],
 	theme: {
 		// Extend the default Tailwind theme.
 		extend: {
@@ -33,7 +48,7 @@ if ('editor' === process.env._rs_TARGET) {
 				'xl': {'max': '1279px'},
 				'lg': {'max': '1023px'},
 				'md': {'max': '767px'},
-				'sm': {'max': '639px'},
+				'sm': {'max': '600px'},
 			},
 		},
 	},

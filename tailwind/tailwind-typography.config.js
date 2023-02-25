@@ -1,20 +1,5 @@
 const colors = require('tailwindcss/colors');
-const themeJSON = require('../theme/theme.json');
-const themeElements = {};
-
-/*
- * Converting themeJSON styles.elements into tailwind
- * custom css properties, so they apply to blocks
- * and to the theme html and can be controlled through
- * the theme.json file.
- **/ 
-Object.keys(themeJSON.styles.elements).forEach( (e) => {
-	themeElements[e] = { 
-		...themeJSON.styles.elements[e].typography, 
-		...themeJSON.styles.elements[e].color, 
-		...themeJSON.styles.elements[e].border
-	};
-});
+const { customCss } = require('./tailwind-customcss');
 
 module.exports = {
 	theme: {
@@ -35,7 +20,7 @@ module.exports = {
 					},
 					css: [
 						{
-							...themeElements,
+							...customCss,
  							/**
 							 * By default, max-width is set to 65 characters.
 							 * This is a good default for readability, but

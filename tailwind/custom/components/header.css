@@ -40,6 +40,14 @@
 					}
 				}
 
+				button {
+					svg {
+						fill: #fff;
+						stroke: var( --wp--preset--color--link-active ) !important;
+						margin-top: 0 !important;
+					}
+				}
+
 				ul {
 
 					@apply border-slate-200 !important;
@@ -86,6 +94,13 @@
 
 	@media( max-width: 600px ) {
 		.wp-block-navigation {
+
+			&__responsive-container-close,
+			&__responsive-container-open {
+				svg {
+					fill: var(--wp--preset--color--link-active);
+				}
+			}
 
 			&__responsive-dialog  {
 				margin-top: 0px !important;
