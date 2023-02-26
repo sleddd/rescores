@@ -18,6 +18,19 @@ function _rs_render_block_template( $template_name ) {
 }
 
 /**
+ * Finds and renders a block template part.
+ */
+function _rs_render_block_template_part( $template_name ) {
+	if ( ! empty( $template_name ) ) {
+		$template = get_block_template( 'rescored/theme//' . $template_name, 'wp_template_part' );
+		if ( is_object( $template ) && property_exists( $template, 'content' ) ) {
+			echo do_blocks( $template->content );
+		}
+	}
+}
+
+
+/**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
 function _rs_pingback_header() {
