@@ -1,23 +1,9 @@
 .header {
 	@apply flex flex-nowrap flex-row m-0 p-0 pl-4 pr-4;
 	
-	.site-info {
-		.site-details {
-			min-width: 300px;
-
-			@media( max-width: 440px ) {
-				min-width: auto;
-			}
-		}
-
-		img {
-			margin: 0;
-		}
-	}
-
 	nav {
-		flex: 1;
-		@apply flex justify-end;
+		max-width: calc( 100% - 165px ) !important;
+		@apply flex grow justify-end !important;
 
 		.wp-block-navigation__responsive-close {
 			max-width: 100% !important;
@@ -28,8 +14,9 @@
 		ul {
 
 			li {
-				@apply relative text-link-active p-2 pl-0 pr-0;
+				@apply relative text-link-active p-2 pl-3 pr-3;
 				@apply m-0 !important;
+				min-width: fit-content;
 				
 				a {
 					@apply text-link-active;
@@ -41,6 +28,7 @@
 				}
 
 				button {
+					margin-right: 0 !important;
 					svg {
 						fill: #fff;
 						stroke: var( --wp--preset--color--link-active ) !important;
@@ -48,26 +36,30 @@
 					}
 				}
 
-				ul {
+				button[aria-expanded="true"] + ul { 
+					min-width: 0 !important;
+				}
 
+				ul {
 					@apply border-slate-200 !important;
-					min-width: 165px !important;
 
 					li {
-						@apply relative border-b border-slate-200;			 
-
+						@apply border-b border-slate-200 pl-1 pr-2;
+									 
 						&:last-of-type {
 							@apply border-b-0;
 						}
 
 						ul {
-							@apply bg-slate-100 !important;
+							width: 100% !important; 
+							@apply block bg-slate-100 !important;
 							top: -1px !important;
-							min-width: 0px;
-							transition: all .4s ease-in !important;
+							left: 100% !important;
+							transition: all .3s ease-in !important;
 
 							a {
 								@apply border-b border-slate-200;
+								@apply  pr-0 !important;
 							}
 	
 							&:last-of-type {
@@ -78,25 +70,26 @@
 						}
 					}
 				}
+			}
+		}
 
-
- 				&:nth-last-child(-n+0):first-of-type, 
-				&:nth-last-child(-n+1):first-of-type {
-					&.wp-block-navigation-submenu {
-						ul {
-							left: -100% !important;
-						}
+		*:not(li) > ul > li:last-of-type {
+			&.wp-block-navigation-submenu {
+				ul {
+					ul {
+						left: -100% !important;
 					}
 				}
-			}			
+			}
 		}
 	}
-
+ 
 	@media( max-width: 600px ) {
 		.wp-block-navigation {
 
 			&__responsive-container-close,
 			&__responsive-container-open {
+				background: transparent !important;
 				svg {
 					fill: var(--wp--preset--color--link-active);
 				}
@@ -129,7 +122,7 @@
 							display: block !important;
 							position: absolute;
 							right: 0;
-							top: 7px;
+							top: 15px;
 						}
 
 						button[aria-expanded="false"] + ul {

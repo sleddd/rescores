@@ -26,6 +26,11 @@
 					"name": "Gray - Dark"
 				},
 				{
+					"slug": "gray-darkest",
+					"color": "#555555",
+					"name": "Gray - Darkest"
+				},
+				{
 					"slug": "link-active",
 					"color": "#1e3a8a",
 					"name": "Primary - Link Active"
@@ -169,10 +174,9 @@
 				"typography": {
 					"fontWeight": "600",
 					"fontSize": "3.5rem",
-					"lineHeight": "1.2",
+					"lineHeight": "1.35",
 					"a": {
 						"fontWeight": "600"
-
 					}
 				}
 			},
@@ -214,6 +218,10 @@
 					"lineHeight": "1.4"
 				}
 			},
+			"p": {
+				"marginTop": "0.5rem",
+				"marginBottom": "0.5rem"
+			},
 			"link": {
 				"color": {
 					"text": "var(--wp--preset--color--link-active)"
@@ -248,7 +256,9 @@
 			}
 		},
 		"spacing": {
-			"blockGap": "var(--wp--preset--spacing--10)"
+			"margin": "false",
+            "padding": "false",
+            "blockGap":"null"
 		}
 	}
 }

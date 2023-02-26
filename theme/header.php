@@ -29,7 +29,7 @@ echo block_header_area();
 ?>
 
 
-<div id="page">
+<div class="wp-site-blocks" id="page">
 	<a href="#content" class="sr-only"><?php esc_html_e( 'Skip to content', '_rs' ); ?></a>
 
 	<div id="content">

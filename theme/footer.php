@@ -11,7 +11,7 @@
 
 	</div><!-- #content -->
 
-	<?php echo block_footer_area(); ?>
+	<?php echo _rs_render_block_template_part( 'footer' );?>
  
 </div><!-- #page -->
 
