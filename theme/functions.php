@@ -97,14 +97,6 @@ if ( ! function_exists( '_rs_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', '_rs_setup' );
 
-
-/**
- * Disable block inline wp-container styles.
- *
- * remove_filter( 'render_block', 'wp_render_layout_support_flag', 10, 2 );
- */
-
-
 /**
  * Set the default image if none exists.
  *
@@ -222,6 +214,9 @@ require get_template_directory() . '/inc/template-tags.php';
  */
 require get_template_directory() . '/inc/template-functions.php';
 
+/**
+ * Theme shortcodes.
+ */
 require get_template_directory() . '/inc/template-shortcodes.php';
 
 /**
