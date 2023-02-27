@@ -21,7 +21,6 @@
 <body <?php body_class(); ?>>
 
 <?php
-	// Setting up critical block template parts, so they generate inline css.
 
 wp_body_open();
 
