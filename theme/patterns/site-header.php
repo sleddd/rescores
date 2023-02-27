@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Header
- * Slug: rescored/header
+ * Slug: rescored/site-header
  * Categories: header
  */
 ?>

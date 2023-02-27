@@ -21,13 +21,13 @@
 <body <?php body_class(); ?>>
 
 <?php
+	// Setting up critical block template parts, so they generate inline css.
 
 wp_body_open();
 
 echo block_header_area();
 
 ?>
-
 
 <div class="wp-site-blocks" id="page">
 	<a href="#content" class="sr-only"><?php esc_html_e( 'Skip to content', '_rs' ); ?></a>

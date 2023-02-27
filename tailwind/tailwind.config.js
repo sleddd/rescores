@@ -38,6 +38,11 @@ if ('editor' === process.env._rs_TARGET) {
 		'pr-0',
 		'pl-0',
 		'p-0',
+		'italic',
+		'not-italic',
+		'text-left',
+		'text-center',
+		'text-right'
 	],
 	theme: {
 		// Extend the default Tailwind theme.

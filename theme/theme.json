@@ -172,6 +172,7 @@
 			},
 			"h1": {
 				"typography": {
+					"fontFamily": "'EB Garamond', san-serif",
 					"fontWeight": "600",
 					"fontSize": "3.5rem",
 					"lineHeight": "1.35",
@@ -182,34 +183,47 @@
 			},
 			"h2": {
 				"typography": {
+					"fontFamily": "'EB Garamond', san-serif",
 					"fontWeight": "600",
 					"fontSize": "3rem",
 					"lineHeight": "1.2",
-					"marginTop": "1.5rem",
-					"marginBottom": "1.5rem"
+					"marginTop": "1rem",
+					"marginBottom": "1rem",
+					"paddingTop": "0rem",
+					"paddingBottom": "0rem"
 				}
 			},
 			"h3": {
 				"typography": {
-					"fontSize": "2.5rem"
+					"fontFamily": "'EB Garamond', san-serif",
+					"fontSize": "2.5rem",
+					"paddingTop": "1rem",
+					"paddingBottom": "1rem"
 				}
 			},
 			"h4": {
 				"typography": {
-					"fontSize": "2rem"
+					"fontFamily": "'EB Garamond', san-serif",
+					"fontSize": "2rem",
+					"paddingTop": "1rem",
+					"paddingBottom": "1rem"
 				}
 			},
 			"h5": {
 				"typography": {
 					"fontSize": "1.5rem",
 					"fontWeight": "700",
-					"textTransform": "uppercase"
+					"textTransform": "uppercase",
+					"paddingTop": "1rem",
+					"paddingBottom": "1rem"
 				}
 			},
 			"h6": {
 				"typography": {
 					"fontSize": "1rem",
-					"textTransform": "uppercase"
+					"textTransform": "uppercase",
+					"paddingTop": "1rem",
+					"paddingBottom": "1rem"
 				}
 			},
 			"heading": {

@@ -5,18 +5,6 @@
  * @package rescored
  */
 
- /**
-  * Finds and renders a block template.
-  */
-function _rs_render_block_template( $template_name ) {
-	if ( ! empty( $template_name ) ) {
-		$template = get_block_template( 'rescored/theme//' . $template_name, 'wp_template' );
-		if ( is_object( $template ) && property_exists( $template, 'content' ) ) {
-			echo do_blocks( $template->content );
-		}
-	}
-}
-
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
@@ -26,6 +14,18 @@ function _rs_pingback_header() {
 	}
 }
 add_action( 'wp_head', '_rs_pingback_header' );
+
+
+/**
+ * Renders inline block styles for template parts before wp_head.
+ */
+function _rs_render_template_part_styles() {
+	do_blocks( '<!-- wp:pattern {"slug":"rescored/site-footer", "theme":"rescored"} /-->' );
+	do_blocks( '<!-- wp:pattern {"slug":"rescored/site-header", "theme":"rescored"} /-->' );
+}
+add_action( 'get_header', '_rs_render_template_part_styles' );
+
+
 
 /**
  * Changes comment form default fields.
@@ -99,7 +99,6 @@ function _rs_get_avatar_size() {
  * Create the continue reading link
  */
 function _rs_continue_reading_link() {
-
 	if ( ! is_admin() ) {
 		$continue_reading = sprintf(
 			/* translators: %s: Name of current post. */
@@ -212,3 +211,146 @@ function _rs_html5_comment( $comment, $args, $depth ) {
 		</article><!-- .comment-body -->
 	<?php
 }
+
+
+/**
+ * Renders the layout config to the block wrapper adding inline styles.
+ *
+ * This is useful for instances of a block template part that is loaded after wp_head
+ * runs. It will make it harder to override the block styles as the inline styles will
+ * exist right before the block content. This is why these are generally loaded within w
+ *
+ * @link https://github.com/WordPress/WordPress/blob/master/wp-includes/block-supports/layout.php
+ *
+ * @param string $block_content Rendered block content.
+ * @param array  $block         Block object.
+ * @return string Filtered block content.
+ */
+function _rs_render_block_with_inline_styles( $block_content, $block ) {
+
+	$block_type     = WP_Block_Type_Registry::get_instance()->get_registered( $block['blockName'] );
+	$support_layout = block_has_support( $block_type, array( '__experimentalLayout' ), false );
+
+	if ( ! $support_layout ) {
+		return $block_content;
+	}
+
+	$block_gap              = wp_get_global_settings( array( 'spacing', 'blockGap' ) );
+	$global_layout_settings = wp_get_global_settings( array( 'layout' ) );
+	$has_block_gap_support  = isset( $block_gap ) ? null !== $block_gap : false;
+	$default_block_layout   = _wp_array_get( $block_type->supports, array( '__experimentalLayout', 'default' ), array() );
+	$used_layout            = isset( $block['attrs']['layout'] ) ? $block['attrs']['layout'] : $default_block_layout;
+
+	if ( isset( $used_layout['inherit'] ) && $used_layout['inherit'] ) {
+		if ( ! $global_layout_settings ) {
+			return $block_content;
+		}
+	}
+
+	$class_names        = array();
+	$layout_definitions = _wp_array_get( $global_layout_settings, array( 'definitions' ), array() );
+	$block_classname    = wp_get_block_default_classname( $block['blockName'] );
+	$container_class    = wp_unique_id( 'wp-container-' );
+	$layout_classname   = '';
+
+	// Set the correct layout type for blocks using legacy content width.
+	if ( isset( $used_layout['inherit'] ) && $used_layout['inherit'] || isset( $used_layout['contentSize'] ) && $used_layout['contentSize'] ) {
+		$used_layout['type'] = 'constrained';
+	}
+
+	if (
+		wp_get_global_settings( array( 'useRootPaddingAwareAlignments' ) ) &&
+		isset( $used_layout['type'] ) &&
+		'constrained' === $used_layout['type']
+	) {
+		$class_names[] = 'has-global-padding';
+	}
+
+	/*
+	 * The following section was added to reintroduce a small set of layout classnames that were
+	 * removed in the 5.9 release (https://github.com/WordPress/gutenberg/issues/38719). It is
+	 * not intended to provide an extended set of classes to match all block layout attributes
+	 * here.
+	 */
+	if ( ! empty( $block['attrs']['layout']['orientation'] ) ) {
+		$class_names[] = 'is-' . sanitize_title( $block['attrs']['layout']['orientation'] );
+	}
+
+	if ( ! empty( $block['attrs']['layout']['justifyContent'] ) ) {
+		$class_names[] = 'is-content-justification-' . sanitize_title( $block['attrs']['layout']['justifyContent'] );
+	}
+
+	if ( ! empty( $block['attrs']['layout']['flexWrap'] ) && 'nowrap' === $block['attrs']['layout']['flexWrap'] ) {
+		$class_names[] = 'is-nowrap';
+	}
+
+	// Get classname for layout type.
+	if ( isset( $used_layout['type'] ) ) {
+		$layout_classname = _wp_array_get( $layout_definitions, array( $used_layout['type'], 'className' ), '' );
+	} else {
+		$layout_classname = _wp_array_get( $layout_definitions, array( 'default', 'className' ), '' );
+	}
+
+	if ( $layout_classname && is_string( $layout_classname ) ) {
+		$class_names[] = sanitize_title( $layout_classname );
+	}
+
+	/*
+	 * Only generate Layout styles if the theme has not opted-out.
+	 * Attribute-based Layout classnames are output in all cases.
+	 */
+	if ( ! current_theme_supports( 'disable-layout-styles' ) ) {
+
+		$gap_value = _wp_array_get( $block, array( 'attrs', 'style', 'spacing', 'blockGap' ) );
+		/*
+		 * Skip if gap value contains unsupported characters.
+		 * Regex for CSS value borrowed from `safecss_filter_attr`, and used here
+		 * to only match against the value, not the CSS attribute.
+		 */
+		if ( is_array( $gap_value ) ) {
+			foreach ( $gap_value as $key => $value ) {
+				$gap_value[ $key ] = $value && preg_match( '%[\\\(&=}]|/\*%', $value ) ? null : $value;
+			}
+		} else {
+			$gap_value = $gap_value && preg_match( '%[\\\(&=}]|/\*%', $gap_value ) ? null : $gap_value;
+		}
+
+		$fallback_gap_value = _wp_array_get( $block_type->supports, array( 'spacing', 'blockGap', '__experimentalDefault' ), '0.5em' );
+		$block_spacing      = _wp_array_get( $block, array( 'attrs', 'style', 'spacing' ), null );
+
+		/*
+		 * If a block's block.json skips serialization for spacing or spacing.blockGap,
+		 * don't apply the user-defined value to the styles.
+		 */
+		$should_skip_gap_serialization = wp_should_skip_block_supports_serialization( $block_type, 'spacing', 'blockGap' );
+
+		$style = wp_get_layout_style(
+			".$block_classname.$container_class",
+			$used_layout,
+			$has_block_gap_support,
+			$gap_value,
+			$should_skip_gap_serialization,
+			$fallback_gap_value,
+			$block_spacing
+		);
+
+		// Only add container class and enqueue block support styles if unique styles were generated.
+		if ( ! empty( $style ) ) {
+			$class_names[] = $container_class;
+		}
+	}
+
+	/*
+	 * This assumes the hook only applies to blocks with a single wrapper.
+	 * A limitation of this hook is that nested inner blocks wrappers are not yet supported.
+	 */
+	$content = preg_replace(
+		'/' . preg_quote( 'class="', '/' ) . '/',
+		'class="' . esc_attr( implode( ' ', $class_names ) ) . ' ',
+		$block_content,
+		1
+	);
+
+	return '<style>' . $style . '</style>' . $content;
+}
+add_filter( 'render_block', '_rs_render_block_with_inline_styles', 10, 2 );
