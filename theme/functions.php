@@ -97,6 +97,14 @@ if ( ! function_exists( '_rs_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', '_rs_setup' );
 
+
+/**
+ * Disable block inline wp-container styles.
+ *
+ * remove_filter( 'render_block', 'wp_render_layout_support_flag', 10, 2 );
+ */
+
+
 /**
  * Set the default image if none exists.
  *
@@ -155,9 +163,10 @@ add_action( 'widgets_init', '_rs_widgets_init' );
  */
 function _rs_scripts() {
 	wp_enqueue_style( '_rs-style', get_stylesheet_uri(), array(), _RS_VERSION );
+	wp_enqueue_style( '_rs-style', "https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap", array(), _RS_VERSION );
 	wp_enqueue_script( '_rs-script', get_template_directory_uri() . '/js/script.min.js', array(), _RS_VERSION, true );
 	wp_enqueue_script( '_rs-navigation-script', get_template_directory_uri() . '/js/navigation.js', array(), rand(), true );
-
+  
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -174,7 +183,6 @@ function _rs_admin_scripts() {
 	}
 }
 add_action( 'enqueue_block_editor_assets', '_rs_admin_scripts' );
-
 
 /**
  * Add the block editor class to TinyMCE.
@@ -213,6 +221,8 @@ require get_template_directory() . '/inc/template-tags.php';
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
+
+require get_template_directory() . '/inc/template-shortcodes.php';
 
 /**
  * Functions which enhance the customizer.

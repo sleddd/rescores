@@ -11,7 +11,7 @@
 
 	</div><!-- #content -->
 
-	<?php echo block_footer_area();?>
+	<?php block_footer_area(); ?>
  
 </div><!-- #page -->
 
