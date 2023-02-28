@@ -52,16 +52,31 @@ Object.keys(themeJSON.styles.elements).forEach((e) => {
 
 		// Setting general style attributes.
 		let general =  elementName != 'a' ? { ...elementStyles } : {};
+
+		// Pulling custom padding from general.
+		if ( general.padding ) {
+			general.padding = 
+			general.padding.top + ' ' + 
+			general.padding.right + ' ' +
+			general.padding.bottom + ' ' +
+			general.padding.left;
+		}
+
+		// Pulling custom margin from general.
+		if ( general.margin  ) {
+			general.margin = 
+			general.margin.top + ' ' + 
+			general.margin.right + ' ' +
+			general.margin.bottom + ' ' +
+			general.margin.left;
+		}
 		 
 		// Checking for a color attribute hidden in general.
 		if ( general.text ) {
 			let textColor = general.text;
 			delete general.text;
 			general = { ...general, color: textColor };
-		}
-
-		// If anchor only remove hover etc.
-		
+		}		
 
 		// Adding element to customCSS object for config.
 		if ( ! customCss[elementName ] ) {

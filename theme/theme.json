@@ -331,11 +331,7 @@
 				"elements" : {
 					"h1": {
 						"typography": {
-							"fontFamily": "'Lato', san-serif",
-							"padding": {
-								"top": "0px",
-								"bottom": "0px"
-							}
+							"fontFamily": "'Lato', san-serif"
 						}
 					},
 					"link": {
