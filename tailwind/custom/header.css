@@ -42,17 +42,23 @@
 				}
 
 				button[aria-expanded="true"] + ul { 
+					width: 100% !important;
 					min-width: 0 !important;
 				}
 
 				ul {
 					@apply border-slate-200 !important;
+					left: auto !important;
 
 					li {
-						@apply border-b border-slate-200 pl-1 pr-2;
+						@apply flex w-full border-b border-slate-200 pl-1 pr-2;
 									 
 						&:last-of-type {
 							@apply border-b-0;
+						}
+						 
+						a {
+							padding: 0px 0.3rem !important;
 						}
 
 						ul {
@@ -64,7 +70,7 @@
 
 							a {
 								@apply border-b border-slate-200;
-								@apply  pr-0 !important;
+								@apply pr-0 !important;
 							}
 	
 							&:last-of-type {

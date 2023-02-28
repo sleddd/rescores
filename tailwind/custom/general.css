@@ -1,0 +1,81 @@
+.wp-block-post {
+	&-title  {
+		@apply pt-0 pb-0 !important;
+	}
+
+	&-content  {
+		&:after {
+			display:block;
+			content: "";
+			clear: both;
+		}
+	
+		p:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+	}
+}
+
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+	@apply bg-slate-100 !important;
+}
+
+dl {
+	@apply pb-4;
+	dt {
+		@apply font-semibold mt-2;
+	}
+}
+
+.page-title, .entry-title {
+ 	margin-left: 0;
+}
+
+figure.wp-block-pullquote {
+    margin: 3rem 0;
+
+    blockquote {
+        border-left: 0;
+		border: 0 !important;
+    }
+}
+
+.wp-block-quote, blockquote {
+	@apply border mt-2 mb-2 border-l-8 border-l-link-active border-slate-300 !important;
+	border-radius: 4px;
+
+	p {
+		padding: 0 0 0.5rem 0;
+		margin: 0;
+	}
+
+	&.has-text-align-right {
+		@apply border border-l-2 border-slate-300 border-r-8 border-r-link-active !important;
+	}
+}
+
+.wp-block-quote.has-text-align-right {
+	border-left: 1px solid #e2e8f0 !important;
+}
+
+.wp-calendar-table {
+	text-align: center;
+}
+
+.wp-block-calendar {
+	table {
+		border-radius: 4px;
+
+		caption {
+			@apply pt-4 pb-4;
+		}
+		th {
+			@apply bg-slate-200 font-semibold !important;
+		}
+	}
+	.pad {
+		display: none;
+	}
+}

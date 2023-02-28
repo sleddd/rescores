@@ -1,0 +1,30 @@
+.woocommerce {
+	.summary {
+		margin-top: 30px
+	}
+}
+.woocommerce-info {
+	border-top-color: var(--wp--preset--color--link-active);
+}
+
+.woocommerce-info::before {
+	color: var(--wp--preset--color--link-active);
+}
+
+input, textarea {
+	@apply border border-slate-400;
+	border-radius: 4px;
+}
+
+.woocommerce .quantity .qty {
+	width: fit-content;
+	@apply border-slate-200;
+}
+
+#add_payment_method #payment, .woocommerce-cart #payment, .woocommerce-checkout #payment {
+	@apply bg-slate-200;
+
+	.woocommerce-info {
+		@apply bg-slate-100;
+	}
+}

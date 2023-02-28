@@ -31,7 +31,7 @@
 					<!-- wp:group {"style":{"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"layout":{"type":"flex"}} -->
 					<div class="wp-block-group" style="margin-top:0px;margin-bottom:0px">
 						<!-- wp:comment-date /-->
-						<!-- wp:comment-edit-link /-->
+						<!-- wp:comment-edit-link {"style":{"spacing":{"margin":{"top":"0px","bottom":"0px", "left": "1rem"}}}} /-->
 					</div>
 					<!-- /wp:group -->
 

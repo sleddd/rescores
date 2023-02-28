@@ -8,7 +8,7 @@
 ?>
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"var:preset|spacing|70"}}},"className":"post-meta","layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--70)">
-	<!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex"}} -->
+	<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"flex"}} -->
 		<div class="wp-block-group">
 			<!-- wp:paragraph -->
 			<p>
@@ -40,15 +40,14 @@
 		</div>
 	<!-- /wp:group -->
 
-	<!-- wp:group {"style":{"spacing":{"blockGap":"0.5ch"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+	<!-- wp:group {"style":{"spacing":{"blockGap":"0.5ch"}},"layout":{"type":"flex","orientation":"horizontal"}} -->
 		<div class="wp-block-group">
 			<!-- wp:paragraph -->
 			<p>
 				<?php echo esc_html_x( 'Tags:', 'Label for a list of post tags', '_rs' ); ?>
+				<!-- wp:post-terms {"term":"post_tag"} /-->
 			</p>
-			<!-- /wp:paragraph -->
-
-			<!-- wp:post-terms {"term":"post_tag"} /-->
+			<!-- /wp:paragraph -->		
 		</div>
 	<!-- /wp:group -->
 </div>

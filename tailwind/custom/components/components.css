@@ -34,39 +34,12 @@ $(post-title-selector) {
  *
  * https://make.wordpress.org/core/2021/06/29/on-layout-and-content-width-in-wordpress-5-8/
  */
+#main {
+	padding: 1rem 0;
+}
+
 .page-content > *,
 .entry-content > * {
 	/* Content width from the `theme.json` file */
 	@apply mx-auto;
-}
-
-.wp-block-post {
-	&-title  {
-		@apply pt-0 pb-0 !important;
-	}
-
-	&-content  {
-		&:after {
-			display:block;
-			content: "";
-			clear: both;
-		}
-	
-		p:after {
-			content: "";
-			display: table;
-			clear: both;
-		}
-	}
-}
-
-.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
-	@apply bg-slate-100 !important;
-}
-
-dl {
-	@apply pb-4;
-	dt {
-		@apply font-semibold mt-2;
-	}
 }
