@@ -92,11 +92,6 @@ Object.keys(themeJSON.styles.elements).forEach((e) => {
 			general = { ...general, color: textColor };
 		}		
 		// Adding element to customCSS object for config.
-
-		if ( elementName == 'h1') {
- 			//console.log(elementName);
-			//console.log(general);
-		}
 		customCss[elementName] = {
 			...customCss[elementName],
 			...general,
@@ -106,5 +101,4 @@ Object.keys(themeJSON.styles.elements).forEach((e) => {
 	});
 
 });
-console.log(customCss);
 exports.customCss = customCss;
