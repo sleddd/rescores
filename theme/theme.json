@@ -145,33 +145,36 @@
 		"elements": {
 			"button": {
 				"border": {
-					"radius": "10px"
+					"radius": "4px"
 				},
 				"color": {
 					"background": "var(--wp--preset--color--link-active)",
-					"text": "var(--wp--preset--color--white) !important"
+					"text": "var(--wp--preset--color--white)"
 				},
 				":hover": {
 					"color": {
 						"background": "var(--wp--preset--color--link-hover)",
-						"text": "var(--wp--preset--color--white) !important"
+						"text": "var(--wp--preset--color--white)"
+					},
+					"typography": {
+						"textDecoration": "none"
 					}
 				},
 				":focus": {
 					"color": {
 						"background": "var(--wp--preset--color--link-active)",
-						"text": "var(--wp--preset--color--white) !important"
+						"text": "var(--wp--preset--color--white)"
 					}
 				},
 				":active": {
 					"color": {
 						"background": "var(--wp--preset--color--link-active)",
-						"text": "var(--wp--preset--color--white) !important"
+						"text": "var(--wp--preset--color--white)"
 					}
 				},
 				":visited": {
 					"color": {
-						"text": "var(--wp--preset--color--white) !important"
+						"text": "var(--wp--preset--color--white)"
 					}
 				}
 			},
@@ -195,13 +198,13 @@
 				"spacing": {
 					"margin": {
 						"top": "0rem",
-						"bottom": "0em",
+						"bottom": "0rem",
 						"right": "0",
 						"left": "0"
 					},
 					"padding": {
 						"top": "0.5rem",
-						"bottom": "0.5em",
+						"bottom": "0.5rem",
 						"right": "0",
 						"left": "0"
 					}
@@ -217,13 +220,13 @@
 				"spacing": {
 					"margin": {
 						"top": "0rem",
-						"bottom": "0em",
+						"bottom": "0rem",
 						"right": "0",
 						"left": "0"
 					},
 					"padding": {
 						"top": "0.5rem",
-						"bottom": "0.5em",
+						"bottom": "0.5rem",
 						"right": "0",
 						"left": "0"
 					}
@@ -237,7 +240,7 @@
 				"spacing": {
 					"padding": {
 						"top": "0.5rem",
-						"bottom": "0.5em",
+						"bottom": "0.5rem",
 						"right": "0",
 						"left": "0"
 					}
@@ -251,7 +254,7 @@
 				"spacing": {
 					"padding": {
 						"top": "0.5rem",
-						"bottom": "0.5em",
+						"bottom": "0.5rem",
 						"right": "0",
 						"left": "0"
 					}
@@ -265,7 +268,7 @@
 				"spacing": {
 					"padding": {
 						"top": "0.5rem",
-						"bottom": "0.5em",
+						"bottom": "0.5rem",
 						"right": "0",
 						"left": "0"
 					}
@@ -289,6 +292,22 @@
 					"lineHeight": "1.45"
 				}	
 			},
+			"figure" : {
+				"spacing" : {
+					"margin" : {
+						"top": "0.5rem",
+						"bottom": "0.5rem",
+						"left": "0",
+						"right": "0"
+					},
+					"padding" : {
+						"top": "0.5rem",
+						"bottom": "0.5rem",
+						"left": "0",
+						"right": "0"
+					}
+				}
+			},
 			"link" : {
 				"color": {
 					"text": "var(--wp--preset--color--link-active)"
@@ -301,7 +320,7 @@
 						"text": "var(--wp--preset--color--link-hover)"
 					},
 					"typography": {
-						"textDecoration": "underline"
+						"textDecoration": "none"
 					}
 				},
 				":focus": {
@@ -309,7 +328,7 @@
 						"text": "var(--wp--preset--color--link-focus)"
 					},
 					"typography": {
-						"textDecoration": "underline"
+						"textDecoration": "none"
 					}
 				},
 				":active": {
@@ -331,11 +350,23 @@
 					}
 				}
 			},
+			"pre" : {
+				"color": {
+					"background" : "#f1f5f9"
+				},
+				"border": {
+					"color": "#cbd5e1",
+					"width": "1px",
+					"style": "solid"
+				}
+			},
 			"code" : {
+				"color": {
+					"background": "#f1f5f9"
+				},
 				"typography" : {
-					"background" : "#ededed",
 					"display": "block",
-					"borderRadius": "4px"
+					"borderRadius": "3px"
 				},
 				"spacing": {
 					"padding" : {
@@ -350,6 +381,11 @@
 						"right": "0rem",
 						"left": "0rem"
 					}
+				},
+				"border": {
+					"color": "#cbd5e1",
+					"width": "1px",
+					"style": "solid"
 				}
 			}
 		},
@@ -397,6 +433,21 @@
 					"letterSpacing": "0.0rem",
                     "fontStyle": "italic",
 					"lineHeight":"1.3"
+                }
+            },
+			"core/audio": {
+                "spacing": {
+					"padding" : {
+						"top": "1rem",
+						"bottom": "1rem",
+						"left": "0",
+						"right": "0"
+					}
+                }
+            },
+			"core/columns": {
+                "spacing": {
+					"blockGap": "2rem"
                 }
             }
 		}

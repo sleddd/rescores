@@ -1,0 +1,24 @@
+.wp-block-button {
+    a {
+        @apply text-white mt-1 mb-1;
+    }
+    &.is-style-squared  {
+        border-radius: 0;
+
+        .wp-block-button__link {
+            border-radius: 0;
+        }
+    }
+    &.is-style-outline  {
+        background: transparent;
+
+        &.wp-block-button__link {
+            border: 1px solid var(--wp--preset--color--link-active);
+            color: var(--wp--preset--color--link-active);
+
+            &:hover {
+                color: var(--wp--preset--color--link-hover);
+            }
+        }
+    }
+}

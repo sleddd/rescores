@@ -59,3 +59,14 @@ $(post-title-selector) {
 		}
 	}
 }
+
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+	@apply bg-slate-100 !important;
+}
+
+dl {
+	@apply pb-4;
+	dt {
+		@apply font-semibold mt-2;
+	}
+}

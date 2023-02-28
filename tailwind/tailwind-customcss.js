@@ -65,17 +65,20 @@ Object.keys(themeJSON.styles.elements).forEach((e) => {
 		}
 
 		// Reformating border.
-		if ( elementStyles.border ) {
+		if ( 'border' === element  ) {
 			elementStyles.border = 
-			elementStyles.border.style + ' ' +
-			elementStyles.border.width + ' ' +
-			elementStyles.border.color;
+			elementStyles.style + ' ' +
+			elementStyles.width + ' ' +
+			elementStyles.color;
+			delete elementStyles.style;
+			delete elementStyles.width;
+			delete elementStyles.color;
 		}
 
 		// Reformating border radius.
-		if ( elementStyles.border && elementStyles.border.radius ) {
-			elementStyles.borderRadius = elementStyles.border.Radius;
-			delete elementStyles.border.radius;
+		if ( 'border' === element && elementStyles.radius ) {
+			elementStyles.borderRadius = elementStyles.radius;
+			delete elementStyles.radius;
 		}
 
 		// Removing color and type from remaining styles.
@@ -98,7 +101,6 @@ Object.keys(themeJSON.styles.elements).forEach((e) => {
 			...color,
 			...typography,
 		}; 
-	});
-
+	})
 });
 exports.customCss = customCss;
