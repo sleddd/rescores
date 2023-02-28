@@ -39,5 +39,3 @@ $(post-title-selector) {
 	/* Content width from the `theme.json` file */
 	@apply mx-auto;
 }
-
-@import header.css;

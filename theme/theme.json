@@ -137,6 +137,11 @@
 		}
 	}, 
 	"styles": {
+		"spacing": {
+			"margin": "true",
+            "padding": "true",
+            "blockGap":"null"
+		},
 		"elements": {
 			"button": {
 				"border": {
@@ -172,10 +177,16 @@
 			},
 			"h1": {
 				"typography": {
-					"fontFamily": "'EB Garamond', san-serif",
+					"fontFamily": "'Cormorant Garamond', san-serif",
 					"fontWeight": "600",
 					"fontSize": "3.5rem",
 					"lineHeight": "1.35",
+					"padding": {
+						"top": "0.3rem",
+						"bottom": "0.3rem",
+						"right": "0",
+						"left": "0"
+					},
 					"a": {
 						"fontWeight": "600"
 					}
@@ -183,58 +194,81 @@
 			},
 			"h2": {
 				"typography": {
-					"fontFamily": "'EB Garamond', san-serif",
+					"fontFamily": "'Cormorant Garamond', san-serif",
 					"fontWeight": "600",
 					"fontSize": "3rem",
 					"lineHeight": "1.2",
-					"marginTop": "1rem",
-					"marginBottom": "1rem",
-					"paddingTop": "0rem",
-					"paddingBottom": "0rem"
+					"padding": {
+						"top": "0.5rem",
+						"bottom": "0.5rem",
+						"right": "0",
+						"left": "0"
+					}
 				}
 			},
 			"h3": {
 				"typography": {
-					"fontFamily": "'EB Garamond', san-serif",
+					"fontFamily": "'Cormorant Garamond', san-serif",
 					"fontSize": "2.5rem",
-					"paddingTop": "1rem",
-					"paddingBottom": "1rem"
+					"padding": {
+						"top": "0.5rem",
+						"bottom": "0.5rem",
+						"right": "0",
+						"left": "0"
+					}
 				}
 			},
 			"h4": {
 				"typography": {
-					"fontFamily": "'EB Garamond', san-serif",
+					"fontFamily": "'Cormorant Garamond', san-serif",
 					"fontSize": "2rem",
-					"paddingTop": "1rem",
-					"paddingBottom": "1rem"
+					"padding": {
+						"top": "0.5rem",
+						"bottom": "0.5rem",
+						"right": "0",
+						"left": "0"
+					}
 				}
 			},
 			"h5": {
 				"typography": {
 					"fontSize": "1.5rem",
 					"fontWeight": "700",
-					"textTransform": "uppercase",
-					"paddingTop": "1rem",
-					"paddingBottom": "1rem"
+					"padding": {
+						"top": "0.5rem",
+						"bottom": "0.5rem",
+						"right": "0",
+						"left": "0"
+					}
 				}
 			},
 			"h6": {
 				"typography": {
 					"fontSize": "1rem",
 					"textTransform": "uppercase",
-					"paddingTop": "1rem",
-					"paddingBottom": "1rem"
+					"letterSpacing": "0.05rem",
+					"padding": {
+						"top": "0.5rem",
+						"bottom": "0.5rem",
+						"right": "0",
+						"left": "0"
+					}
 				}
 			},
 			"heading": {
 				"typography": {
 					"fontWeight": "400",
-					"lineHeight": "1.4"
+					"lineHeight": "1.4",
+					"fontFamily": "'Comorant Garamond', sans-serif"
 				}
 			},
 			"p": {
-				"marginTop": "0.5rem",
-				"marginBottom": "0.5rem"
+				"padding":  {
+					"top": "0.5rem",
+					"bottom": "0.5rem",
+					"right": "0",
+					"left": "0"
+				}
 			},
 			"link": {
 				"color": {
@@ -269,10 +303,68 @@
 				}
 			}
 		},
-		"spacing": {
-			"margin": "false",
-            "padding": "false",
-            "blockGap":"null"
+		"blocks": {
+			"core/navigation": {
+                "typography": {
+					"fontSize": ".85rem",
+					"letterSpacing": "0.0rem",
+                    "textTransform": "uppercase"
+                },
+				"elements" : {
+					"link": {
+						"typography" : {
+							"textDecoration": "none"
+						},
+						":hover" : {
+							"typography": {
+								"textDecoration": "none"
+							}
+						}
+					}
+				}
+            },
+			"core/site-title": {
+                "typography": {
+					"fontSize": "1.5rem !important",
+					"letterSpacing": "0.0rem"
+                },
+				"elements" : {
+					"h1": {
+						"typography": {
+							"fontFamily": "'Lato', san-serif",
+							"padding": {
+								"top": "0px",
+								"bottom": "0px"
+							}
+						}
+					},
+					"link": {
+						"typography": {
+							"fontFamily": "'Lato', san-serif"
+						}
+					}
+				}
+            },
+			"core/site-tagline": {
+                "typography": {
+					"fontSize": ".85rem",
+					"letterSpacing": "0.0rem",
+                    "fontStyle": "italic",
+					"lineHeight":"1.3"
+                }
+            }
 		}
-	}
+	},
+	"templateParts": [
+		{
+			"name": "header",
+			"title": "Header",
+			"area": "header"
+		},
+		{
+			"name": "footer",
+			"title": "Footer",
+			"area": "footer"
+		}
+	]
 }

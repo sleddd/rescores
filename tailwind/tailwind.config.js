@@ -55,6 +55,13 @@ if ('editor' === process.env._rs_TARGET) {
 				'md': {'max': '767px'},
 				'sm': {'max': '600px'},
 			},
+			fontFamily: {
+				'sans': [ 'Lato', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
+				'serif': ['Cormorant Garamond', 'Georgia', 'Times New Roman', 'Time', 'ui-serif', 'serif'],
+				'mono': ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
+				'heading': ['Comorant Garamond', 'serif'],
+				  'body': ['Lato', 'sans-serif']
+			},
 		},
 	},
 	corePlugins: {

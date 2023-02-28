@@ -11,26 +11,20 @@
  * editor.
 */
 body {
-	@apply bg-white font-sans text-body-copy leading-normal;
+	@apply bg-white font-body text-body-copy leading-normal;
+}
+
+h1, 
+h2,
+h3, 
+h4, 
+h5, 
+h6 {
+	@apply font-heading;
 }
 
 #content {
 	@apply pt-10;
-}
-
-
-
-:not(#content) ~ footer, :not(#content) ~.footer {
-	@apply bg-gray-900 text-slate-50 mt-4;
-
-	a {
-		@apply text-slate-400;
-	}
-	.wp-block-site-title {
-		a {
-			@apply text-slate-400;
-		}
-	}
 }
 
 .aligncenter {
@@ -61,7 +55,6 @@ body {
 		display: table;
 		clear: both;
 	}
-
 }
 
 .semibold {

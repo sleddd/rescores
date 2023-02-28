@@ -20,7 +20,7 @@
 				
 				a {
 					@apply text-link-active;
-					padding: 0 0.5rem !important;
+					padding: 0px 0.5rem !important;
 
 					&:hover {
 						@apply text-link-hover;
