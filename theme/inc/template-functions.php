@@ -2,7 +2,7 @@
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
- * @package rescored
+ * @package rescores
  */
 
 /**
@@ -20,8 +20,8 @@ add_action( 'wp_head', '_rs_pingback_header' );
  * Renders inline block styles for template parts before wp_head.
  */
 function _rs_render_template_part_styles() {
-	do_blocks( '<!-- wp:pattern {"slug":"rescored/site-footer", "theme":"rescored"} /-->' );
-	do_blocks( '<!-- wp:pattern {"slug":"rescored/site-header", "theme":"rescored"} /-->' );
+	do_blocks( '<!-- wp:pattern {"slug":"rescores/site-footer", "theme":"rescores"} /-->' );
+	do_blocks( '<!-- wp:pattern {"slug":"rescores/site-header", "theme":"rescores"} /-->' );
 }
 add_action( 'get_header', '_rs_render_template_part_styles' );
 

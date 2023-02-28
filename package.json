@@ -46,7 +46,7 @@
 		"production:esbuild": "npm run development:esbuild -- --minify",
 		"production": "run-p production:**",
 		"prod": "npm run production",
-		"zip": "node node_scripts/zip.js rescored",
+		"zip": "node node_scripts/zip.js rescores",
 		"bundle": "run-s production zip"
 	},
 	"prettier": "@wordpress/prettier-config",

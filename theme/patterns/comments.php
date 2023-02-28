@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Comments
- * Slug: rescored/comments
+ * Slug: rescores/comments
  * Inserter: no
  */
 ?>

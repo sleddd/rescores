@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Post Meta
- * Slug: rescored/post-meta
+ * Slug: rescores/post-meta
  * Categories: query
  * Keywords: post meta
  */

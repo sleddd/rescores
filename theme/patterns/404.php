@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: 404
- * Slug: rescored/404
+ * Slug: rescores/404
  * Inserter: no
  */
 ?>

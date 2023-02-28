@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: No Results Content
- * Slug: rescored/no-results-content
+ * Slug: rescores/no-results-content
  * Inserter: no
  */
 ?>

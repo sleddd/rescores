@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Default Footer
- * Slug: rescored/site-footer
+ * Slug: rescores/site-footer
  * Categories: footer
  */
 ?>

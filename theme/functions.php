@@ -1,10 +1,10 @@
 <?php
 /**
- * rescored functions and definitions
+ * rescores functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package rescored
+ * @package rescores
  */
 
 if ( ! defined( '_RS_VERSION' ) ) {
@@ -24,8 +24,8 @@ if ( ! function_exists( '_rs_setup' ) ) :
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on rescored, use a find and replace
-		 * to change 'rescored' to the name of your theme in all the template files.
+		 * If you're building a theme based on rescores, use a find and replace
+		 * to change 'rescores' to the name of your theme in all the template files.
 		 */
 		load_theme_textdomain( '_rs', get_template_directory() . '/languages' );
 
