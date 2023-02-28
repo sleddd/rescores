@@ -60,7 +60,7 @@ if ('editor' === process.env._rs_TARGET) {
 				'serif': ['Cormorant Garamond', 'Georgia', 'Times New Roman', 'Time', 'ui-serif', 'serif'],
 				'mono': ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
 				'heading': ['Comorant Garamond', 'serif'],
-				  'body': ['Lato', 'sans-serif']
+				'body': ['Lato', 'sans-serif']
 			},
 		},
 	},

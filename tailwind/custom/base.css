@@ -10,8 +10,10 @@
  * `theme.json` file and is applied both to the frontend and in the block
  * editor.
 */
+
 body {
 	@apply bg-white font-body text-body-copy leading-normal;
+	letter-spacing: 0.025rem;
 }
 
 h1, 
@@ -20,43 +22,5 @@ h3,
 h4, 
 h5, 
 h6 {
-	@apply font-heading;
-}
-
-#content {
-	@apply pt-10;
-}
-
-.aligncenter {
-	@apply m-auto;
-}
-
-.alignleft {
-	@apply inline float-left align-top m-3 mt-0 ml-0;
-}
-
-.alignright {
-	@apply inline float-right align-top m-3 mt-0 mr-0;
-}
-
-.wp-caption-text {
-	@apply text-gray-dark text-sm pt-2 pb-2 italic;
-}
-
-.wp-block-post-content  {
-	&:after {
-		display:block;
-		content: "";
-		clear: both;
-	}
-
-	p:after {
-		content: "";
-		display: table;
-		clear: both;
-	}
-}
-
-.semibold {
-	@apply font-semibold !important;
+	@apply mt-0 mb-0 font-heading;
 }

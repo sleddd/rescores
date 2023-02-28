@@ -14,13 +14,13 @@ Object.keys(themeJSON.styles.elements).forEach((e) => {
 
 	// Looping through element styles.
 	Object.keys(themeJSON.styles.elements[e]).forEach((element) => {
-        
+
 		// Changing link element name to 'a'.
 		let elementName = 'link' == e ? 'a' : e;
 
 		// Adjusting element name for psuedo elements.
 		elementName =
-			'color' == element || 'typography' === element
+			'color' == element || 'typography' === element || 'spacing' === element || 'border' === element
 				? elementName
 				: elementName + element;
 
@@ -46,30 +46,44 @@ Object.keys(themeJSON.styles.elements).forEach((e) => {
 				? { ...color, background: elementStyles.color.background }
 				: color;
 
+		// Reformating padding.
+ 		if ( elementStyles.padding ) {
+			elementStyles.padding = 
+			elementStyles.padding.top + ' ' + 
+			elementStyles.padding.right + ' ' +
+			elementStyles.padding.bottom + ' ' +
+			elementStyles.padding.left;
+		}
+
+		// Reformating margin.
+		if ( elementStyles.margin  ) {
+			elementStyles.margin = 
+			elementStyles.margin.top + ' ' + 
+			elementStyles.margin.right + ' ' +
+			elementStyles.margin.bottom + ' ' +
+			elementStyles.margin.left;
+		}
+
+		// Reformating border.
+		if ( elementStyles.border ) {
+			elementStyles.border = 
+			elementStyles.border.style + ' ' +
+			elementStyles.border.width + ' ' +
+			elementStyles.border.color;
+		}
+
+		// Reformating border radius.
+		if ( elementStyles.border && elementStyles.border.radius ) {
+			elementStyles.borderRadius = elementStyles.border.Radius;
+			delete elementStyles.border.radius;
+		}
+
 		// Removing color and type from remaining styles.
 		delete elementStyles.typography;
 		delete elementStyles.color;
 
 		// Setting general style attributes.
-		let general =  elementName != 'a' ? { ...elementStyles } : {};
-
-		// Pulling custom padding from general.
-		if ( general.padding ) {
-			general.padding = 
-			general.padding.top + ' ' + 
-			general.padding.right + ' ' +
-			general.padding.bottom + ' ' +
-			general.padding.left;
-		}
-
-		// Pulling custom margin from general.
-		if ( general.margin  ) {
-			general.margin = 
-			general.margin.top + ' ' + 
-			general.margin.right + ' ' +
-			general.margin.bottom + ' ' +
-			general.margin.left;
-		}
+		let general =  elementName != 'a' || elementName != 'button' ? { ...elementStyles } : {};
 		 
 		// Checking for a color attribute hidden in general.
 		if ( general.text ) {
@@ -77,15 +91,20 @@ Object.keys(themeJSON.styles.elements).forEach((e) => {
 			delete general.text;
 			general = { ...general, color: textColor };
 		}		
-
 		// Adding element to customCSS object for config.
-		if ( ! customCss[elementName ] ) {
-			customCss[elementName] = {
-				...general,
-				...color,
-				...typography,
-			}; 
+
+		if ( elementName == 'h1') {
+ 			//console.log(elementName);
+			//console.log(general);
 		}
+		customCss[elementName] = {
+			...customCss[elementName],
+			...general,
+			...color,
+			...typography,
+		}; 
 	});
+
 });
+console.log(customCss);
 exports.customCss = customCss;

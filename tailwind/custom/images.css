@@ -1,0 +1,15 @@
+.aligncenter {
+	@apply m-auto;
+}
+
+.alignleft {
+	@apply inline float-left align-top m-3 mt-0 ml-0;
+}
+
+.alignright {
+	@apply inline float-right align-top m-3 mt-0 mr-0;
+}
+
+.wp-caption-text {
+	@apply text-gray-dark text-sm pt-2 pb-2 italic;
+}
