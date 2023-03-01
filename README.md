@@ -1,15 +1,15 @@
-Rescores - Hybrid WordPress Starter
+Rescores - Hybrid WordPress Starter Theme
 ========
 
-Rescores is a very minimally-styled hybrid WordPress starter theme. One part block theme, one part classic, it supports the use of Full Site Editor ( FSE ) and global styles as well as classic features like the customizer. 
+One part block theme, one part classic, Rescores is a hybrid WordPress starter theme that supports the use of Full Site Editor ( FSE ) as well as classic features like the customizer. 
 
-It is primarily a developer workflow that separates your theme files from your development files. Transpile your css and javascript into your theme which houses the distribution files, and when ready, load only your theme files to the production site.
+It utilizes a developer workflow that helps separate your theme production files from your development process. It also lets you style both block and general site elements such as headings, links, and paragraphs through the theme.json or through a classic build process with Tailwind.
 
-It is based on Underscores ( https://underscores.me ) and UnderscoreTW ( https://underscoretw.com/ ). In a nutshell, it is a remodel of old themes for modern builds. 
+It is based on Underscores ( https://underscores.me ) and UnderscoreTW ( https://underscoretw.com/ )
 
 ---
 
-![screenshot](https://user-images.githubusercontent.com/1176945/221829049-7235cfb0-cca9-4408-9c8e-3645fc2b612c.png)
+![screenshot-home](https://user-images.githubusercontent.com/1176945/222043554-70a1d495-360f-49a8-aef4-81be967ddbd0.png)
 
 [View Demo Site](https://demo.claudetteraynor.info)
 
@@ -37,39 +37,40 @@ See the complete [development documentation](https://underscoretw.com/docs/tailw
 
 Or [deploy with the tool of your choice](https://underscoretw.com/docs/deployment/#h-other-deployment-options)!
 
----
+Note! When zipping your theme for production, be sure to update any block template part or patterns that have the theme property noted as "theme": "rescores/theme" to "theme": "rescores" as the production build does not route through the theme folder.
 
-## Q & A
+## About Rescores
+
+Rescores is a transitional experimental starter theme used to explore the line between block and classic theme development. It is very much a work in progress and if you find it helpful, feel free to use it however you see fit. The theme has a very barebones amount of styling and only gets updated when I have time.
 
 **You have theme.json and blocks, why do you need a hybrid theme or framework like Tailwind?**
 
 There are layouts where you may want more robust templating ability like that found in classic WordPress themes. Some developers also prefer a more traditional workflow for creating new themes. 
 
-Rescores is a transitional theme that allows you to leverage both classic and modern WordPress theme styles. It has an old school workflow, with a new school twist. 
-
----
+Rescores is a transitional theme that allows you to leverage both classic and modern WordPress to create whatever kind of site or template you want.
 
 **But, why Tailwind?** 
 
-Tailwind, at it's heart, is a collection of utility CSS classes that can be used to design and layout new sites quickly. Unlike other frameworks, such as Bootstrap, you use only what you need, but still have everything at your fingertips. In addition, Tailwind has a simple config that allows you to 'theme' sites without digging into the CSS. 
+Unlike frameworks such as Bootstrap or Foundation, Tailwind lets you pull in only the classes you actually use reducing the amount of css you have for a site. It also has a number of utility classes you can pull in for overriding block styles with a class such as text-sm or p-0 ( padding: 0 ). The config in Tailwind is also very robust which with minimal work will allow you to create a full site theme. Underscoretw also adds a Tailwind CSS plugin that automatically pulls colors and widths from a WordPress theme’s theme.json file into the global css. I took this a step further, by parsing in the style elements property from the theme.json as well, so you can use theme.json to style global headings, links, and other basic elements. It is not meant to handle all site css, but to handle the major ones needed for quick theming and branding. Global css can create conflicts with blocks. For instance, styling a global h1 tag may override block styles in some cases. You will want to think through style conflicts a bit before expanding or using this feature.
 
-WordPress uses theme.json in block themes to control styles much like a Tailwind config file. Connecting the two, rescores lets you define your basic styles for blocks and elements like heading tags, anchor tags, etc in the theme.json and then converts that into global CSS that can be loaded via the standard style.css file. While theme.json generally only applies to blocks, this let's you leverage the block styles for a global or classic theme.
+**Why did you create Rescores?**
 
-There are pros and cons to this approach. Block themes keep CSS contained to the blocks and pull in less CSS than a global stylesheet, however, sometimes as other plugins, blocks, and components get added, having some basic overarcing structures to cover things like heading and anchor tags can be helpful in maintaining branding styles. In addition, Tailwind utility classes can help you override a single block margin or pesky padding with a utility class if needed.
-
-The idea, is that adding Tailwind gives you the flexibility to build whatever you need without having to fully re-invent the wheel and it connects the old to the new through the theme.json and the Tailwind config.
+Rescores was created to explore the line between a block and hybrid theme to see how they can integrate to leverage both sides. Not everyone is on board with simple block themes especially when they need more complicated theme templates that have many dynamic parts. However, many WordPress users prefer being able to use Gutenberg to add new site templates or make modifications rather than having to hire a developer. This lets you use both block and classic theming to do whatever you need. You can also transition from it into a standard block or classic theme in minutes by minimal re-structuring or removing either the html or php files.
 
 ---
 
 **More info...**
 
-Tailwind utility classes and documentation: https://tailwindcss.com/
+Tailwind utility classes and documentation: https://tailwindcss.com
 
-How Tailwind works: https://tailwindcss.com/ or https://kinsta.com/blog/tailwind-css/
+More on Tailwind: https://tailwindcss.com or https://kinsta.com/blog/tailwind-css
 
-How theme.json works: https://www.elmastudio.de/en/theme-json-for-wordpress-block-themes-explained/ or https://make.wordpress.org/core/2021/06/25/introducing-theme-json-in-wordpress-5-8/
+More on block themes and theme.json:
 
----
+https://fullsiteediting.com/lessons/creating-block-based-themes
 
-Rescores is a transitional and experimental starter theme for quick development. It is very much a work in progress and if you find it helpful, feel free to use it how you see fit. The theme has a very minimal barebones style and only gets updated when I have time.
+https://www.elmastudio.de/en/theme-json-for-wordpress-block-themes-explained
+
+https://make.wordpress.org/core/2021/06/25/introducing-theme-json-in-wordpress-5-8
+
 
