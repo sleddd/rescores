@@ -8,11 +8,16 @@
  */
 
  /**
- * Finds and renders a block template.
- */
+  * Finds and renders a block template.
+  */
 function _rs_render_block_template( $template_name ) {
- 	if ( ! empty( $template_name ) ) {
-		$template = get_block_template( 'rescores/theme//index', 'wp_template' );
+	$template = 'rescores';
+	if ( strstr( get_stylesheet_directory(), 'rescores/theme' ) ) {
+		$template = 'rescores/theme';
+	}
+	$template = $template . '//' . $template_name;
+	if ( ! empty( $template_name ) ) {
+		$template = get_block_template( $template, 'wp_template' );
 		if ( is_object( $template ) && property_exists( $template, 'content' ) ) {
 			echo do_blocks( $template->content );
 		}
