@@ -29,9 +29,8 @@
     }
 }
 
-button,
-.button,
-.btn,
+.button:not(.wp-admin),
+.btn:not(.wp-admin),
 .wp-element-button {
     color: white;
 }
