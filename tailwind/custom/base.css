@@ -10,7 +10,6 @@
  * `theme.json` file and is applied both to the frontend and in the block
  * editor.
 */
-
 body {
 	@apply bg-white font-body text-body-copy leading-normal;
 	letter-spacing: 0.025rem;

@@ -5,6 +5,8 @@
 }
 .woocommerce-info {
 	border-top-color: var(--wp--preset--color--link-active);
+	padding-left: 3.5rem;
+	padding-top: 0.9rem;
 }
 
 .woocommerce-info::before {
