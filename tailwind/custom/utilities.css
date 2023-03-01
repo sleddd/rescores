@@ -6,3 +6,15 @@
  *
  * https://tailwindcss.com/docs/plugins#adding-utilities
  */
+
+ .no-mobile-padding {
+    @media( max-width: 1200px ) {
+        @apply p-4 !important;
+    }
+ }
+
+ .sm-mobile-image {
+    @media( max-width: 781px ) {
+        min-height: 275px !important;
+    }
+ }

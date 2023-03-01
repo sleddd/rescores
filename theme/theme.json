@@ -190,7 +190,7 @@
 				"typography": {
 					"fontFamily": "'Cormorant Garamond', san-serif",
 					"fontWeight": "600",
-					"fontSize": "3.5rem",
+					"fontSize": "clamp(2.5rem, 5vw, 3rem)",
 					"lineHeight": "1.2"
 				}
 			},
@@ -212,7 +212,7 @@
 				"typography": {
 					"fontFamily": "'Cormorant Garamond', san-serif",
 					"fontWeight": "600",
-					"fontSize": "3rem",
+					"fontSize": "clamp(2rem, 5vw, 3rem)",
 					"lineHeight": "1.2"
 				}
 			},
@@ -233,7 +233,7 @@
 				},
 				"typography": {
 					"fontFamily": "'Cormorant Garamond', san-serif",
-					"fontSize": "2.5rem"
+					"fontSize": "clamp(1.5rem, 5vw, 2.5rem)"
 				}
 			},
 			"h4": {
@@ -247,7 +247,7 @@
 				},
 				"typography": {
 					"fontFamily": "'Cormorant Garamond', san-serif",
-					"fontSize": "2rem"
+					"fontSize": "clamp(1.45rem, 5vw, 2rem)"
 				}
 			},
 			"h5": {
@@ -260,7 +260,7 @@
 					}
 				},
 				"typography": {
-					"fontSize": "1.5rem",
+					"fontSize": "clamp(1.3rem, 5vw, 1.5rem)",
 					"fontWeight": "700",
 					"fontFamily": "'Cormorant Garamond', san-serif"
 				}
