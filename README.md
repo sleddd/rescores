@@ -5,7 +5,7 @@ One part block theme, one part classic, Rescores is a hybrid WordPress starter t
 
 It utilizes a developer workflow that helps separate your theme production files from your development process. It also lets you style both block and general site elements such as headings, links, and paragraphs through the theme.json or through a classic build process with Tailwind.
 
-It is based on Underscores ( https://underscores.me ) and UnderscoreTW ( https://underscoretw.com/ )
+It is based on Underscores ( https://underscores.me ) and Underscoretw ( https://underscoretw.com/ )
 
 ---
 
@@ -51,7 +51,11 @@ Rescores is a transitional theme that allows you to leverage both classic and mo
 
 **But, why Tailwind?** 
 
-Unlike frameworks such as Bootstrap or Foundation, Tailwind lets you pull in only the classes you actually use reducing the amount of css you have for a site. It also has a number of utility classes you can pull in for overriding block styles with a class such as text-sm or p-0 ( padding: 0 ). The config in Tailwind is also very robust which with minimal work will allow you to create a full site theme. Underscoretw also adds a Tailwind CSS plugin that automatically pulls colors and widths from a WordPress theme’s theme.json file into the global css. I took this a step further, by parsing in the style elements property from the theme.json as well, so you can use theme.json to style global headings, links, and other basic elements. It is not meant to handle all site css, but to handle the major ones needed for quick theming and branding. Global css can create conflicts with blocks. For instance, styling a global h1 tag may override block styles in some cases. You will want to think through style conflicts a bit before expanding or using this feature.
+Per the Underscoretw website "Tailwind is a 'utility-first css framework ... that can be composed to build any design, directly in your markup,' and it makes it possible to build modern websites in less time. (The [Tailwind homepage](https://tailwindcss.com/) does a great job explaining the rest.) If you’re utility-class–hesitant, Tailwind creator Adam Wathan has written a [blog post](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/) to help you through your fears.
+
+Unlike frameworks such as Bootstrap or Foundation, Tailwind lets you pull in only the classes you actually use without you ever having to leave your HTML. In addition to utility classes, Tailwind offers a config structure that integrates nicely with the block theme.json by pulling in and auto-generating css classes for the styles > elements properties ( i.e. basic tags such as headings and links ) as well as for block styles. Using the custom typography classes along with theme.json, you can quickly theme not just your blocks, but your entire site in a very short amount of time. theme.json conversions are done through custom css extension and plugin called 
+
+Note - Styling elements in your theme.json via the styles > elements property creates global css elements that may override block styles. For instance, a global h1 tag style may override a custom block tag style. Global css should be used cautiously.
 
 **Why did you create Rescores?**
 
