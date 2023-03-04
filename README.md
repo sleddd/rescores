@@ -43,7 +43,7 @@ Note! When zipping your theme for production, be sure to update any block templa
 
 Rescores is a transitional experimental starter theme used to explore the line between block and classic theme development. It is very much a work in progress and if you find it helpful, feel free to use it however you see fit. The theme has a very barebones amount of styling and only gets updated when I have time.
 
-**You have theme.json and blocks, why do you need a hybrid theme?**
+**Why do you need a hybrid theme?**
 
 There are layouts where you may want more robust templating ability like that found in classic WordPress themes. Some developers also prefer a more traditional workflow for creating new themes. 
 
