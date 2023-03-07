@@ -77,6 +77,24 @@
 				}
 			]
 		},
+		"custom": {
+            "fontWeight": {
+                "light": 300,
+				"regular": 400,
+                "medium": 500,
+                "semi-bold": 600,
+				"bold": 700
+            },
+            "lineHeight": {
+                "body": 1.5,
+                "heading": 1.2,
+                "medium": 1.5,
+                "one": 1
+            },
+            "spacing": {
+                "outer": "30px"
+            }
+        },
 		"layout": {
 			"contentSize": "80%",
 			"wideSize": "80%"
@@ -132,17 +150,295 @@
 			]
 		},
 		"typography": {
-			"dropCap": false,
-			"fluid": true
-		}
+			"dropCap": true,
+			"fluid": true, 
+			"fontFamilies": [
+				{
+					"fontFamily": "Cormorant Garamond",
+					"name": "Cormorant Garamond",
+					"slug": "cormorant-garamond",
+					"fontFace": [
+						{
+							"fontFamily": "Cormorant Garamond",
+							"fontWeight": "300",
+							"fontStyle": "normal",
+							"src": [
+								"file:./assets/fonts/Cormorant/CormorantGaramond-Light.ttf"				
+							]
+						},
+						{
+							"fontFamily": "Cormorant Garamond",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"src": [
+								"file:./assets/fonts/Cormorant/CormorantGaramond-Regular.ttf"				
+							]
+						},
+						{
+							"fontFamily": "Cormorant Garamond",
+							"fontStyle": "normal",
+							"fontWeight": "500",
+							"src": [
+								"file:./assets/fonts/Cormorant/CormorantGaramond-Medium.ttf"				
+							]
+						}, 
+						{
+							"fontFamily": "Cormorant Garamond",
+							"fontStyle": "normal",
+							"fontWeight": "600",
+							"src": [
+								"file:./assets/fonts/Cormorant/CormorantGaramond-SemiBold.ttf"				
+							]
+						}, 
+						{
+							"fontFamily": "Cormorant Garamond",
+							"fontWeight": "700",
+							"fontStyle": "normal",
+							"src": [
+								"file:./assets/fonts/Cormorant/CormorantGaramond-Bold.ttf"				
+							]
+						},
+						{
+							"fontFamily": "Cormorant Garamond",
+							"fontWeight": "300",
+							"fontStyle": "italic",
+							"src": [
+								"file:./assets/fonts/Cormorant/CormorantGaramond-LightItalic.ttf"				
+							]
+						},
+						{
+							"fontFamily": "Cormorant Garamond",
+							"fontWeight": "400",
+							"fontStyle": "italic",
+							"src": [
+								"file:./assets/fonts/Cormorant/CormorantGaramond-RegularItalic.ttf"				
+							]
+						},
+						{
+							"fontFamily": "Cormorant Garamond",
+							"fontStyle": "italic",
+							"fontWeight": "500",
+							"src": [
+								"file:./assets/fonts/Cormorant/CormorantGaramond-MediumItalic.ttf"				
+							]
+						}, 
+						{
+							"fontFamily": "Cormorant Garamond",
+							"fontStyle": "italic",
+							"fontWeight": "600",
+							"src": [
+								"file:./assets/fonts/Cormorant/CormorantGaramond-SemiBoldItalic.ttf"				
+							]
+						}, 
+						{
+							"fontFamily": "Cormorant Garamond",
+							"fontWeight": "700",
+							"fontStyle": "italic",
+							"src": [
+								"file:./assets/fonts/Cormorant/CormorantGaramond-BoldItalic.ttf"				
+							]
+						}
+					]
+				},
+				{
+					"fontFamily": "Lato",
+					"name": "Lato",
+					"slug": "lato",
+					"fontFace": [
+						{
+							"fontFamily": "Lato",
+							"fontWeight": "300",
+							"fontStyle": "normal",
+							"src": [
+								"file:./assets/fonts/Lato/Lato-Light.ttf"				
+							]
+						},
+						{
+							"fontFamily": "Lato",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"src": [
+								"file:./assets/fonts/Lato/Lato-Regular.ttf"				
+							]
+						},
+						{
+							"fontFamily": "Lato",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/Lato/Lato-Bold.ttf"				
+							]
+						}, 
+						{
+							"fontFamily": "Lato",
+							"fontStyle": "normal",
+							"fontWeight": "900",
+							"src": [
+								"file:./assets/fonts/Lato/Lato-Black.ttf"					
+							]
+						},
+						{
+							"fontFamily": "Lato",
+							"fontWeight": "300",
+							"fontStyle": "italic",
+							"src": [
+								"file:./assets/fonts/Lato/Lato-LightItalic.ttf"				
+							]
+						},
+						{
+							"fontFamily": "Lato",
+							"fontWeight": "400",
+							"fontStyle": "italic",
+							"src": [
+								"file:./assets/fonts/Lato/Lato-Italic.ttf"				
+							]
+						},
+						{
+							"fontFamily": "Lato",
+							"fontStyle": "italic",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/Lato/Lato-BoldItalic.ttf"				
+							]
+						}, 
+						{
+							"fontFamily": "Lato",
+							"fontStyle": "italic",
+							"fontWeight": "900",
+							"src": [
+								"file:./assets/fonts/Lato/Lato-BlackItalic.ttf"					
+							]
+						}
+					]
+				}
+			],
+			"fontSizes": [
+                {
+                    "fluid": {
+                        "max": "3.5rem",
+                        "min": "3rem"
+                    },
+                    "name": "x-large",
+                    "size": "3rem",
+                    "slug": "x-large"
+                }, 
+				{
+                    "fluid": {
+                        "max": "3rem",
+                        "min": "2.5rem"
+                    },
+                    "name": "large",
+                    "size": "2.5rem",
+                    "slug": "large"
+                }, 
+				{
+                    "fluid": {
+                        "max": "2.5rem",
+                        "min": "2rem"
+                    },
+                    "name": "medium",
+                    "size": "2rem",
+                    "slug": "medium"
+                }, 
+				{
+                    "fluid": {
+                        "max": "2rem",
+                        "min": "1.5rem"
+                    },
+                    "name": "medium-small",
+                    "size": "1.5rem",
+                    "slug": "medium-small"
+                }, 
+				{
+                    "fluid": {
+                        "max": "1rem",
+                        "min": "1rem"
+                    },
+                    "name": "small",
+                    "size": "1rem",
+                    "slug": "small"
+                }, 
+				{
+					"fluid": {
+                        "max": "1.5rem",
+                        "min": "1rem"
+                    },
+                    "name": "x-small",
+                    "size": "1rem",
+                    "slug": "x-small"
+                }, 
+				{
+                    "name": "tiny",
+                    "size": ".95rem",
+                    "slug": "tiny"
+                }
+            ]
+		},
+		"useRootPaddingAwareAlignments": true
 	}, 
 	"styles": {
 		"spacing": {
-			"margin": "false",
-            "padding": "false",
-            "blockGap":"null"
+			"margin":"0",
+            "padding": "0",
+            "blockGap":"0"
 		},
+		"typography": {
+            "fontFamily": "var(--wp--preset--font-family--lato)",
+            "fontSize": "16px",
+            "fontWeight": "var(--wp--custom--font-weight--regular)",
+            "lineHeight": "var(--wp--custom--line-height--body)"
+        },
 		"elements": {
+			"h1": {
+				"typography": {
+                    "fontSize": "var(--wp--preset--font-size--x-large)",
+					"fontWeight": 600, 
+					"fontFamily": "Cormorant Garamond"
+                }			
+			},
+			"h2": {
+				"typography": {
+                    "fontSize": "var(--wp--preset--font-size--large)",
+					"fontWeight": 600, 
+					"fontFamily": "Cormorant Garamond"
+                }
+			},
+			"h3": {
+				"typography": {
+                    "fontSize": "var(--wp--preset--font-size--medium)",
+					"fontWeight": 600, 
+					"fontFamily": "Cormorant Garamond"
+                }
+			},
+			"h4": {
+				"typography": {
+                    "fontSize": "var(--wp--preset--font-size--medium-small)",
+					"fontWeight": 500, 
+					"fontFamily": "Cormorant Garamond"
+                }
+			},
+			"h5": {
+				"typography": {
+                    "fontSize": "var(--wp--preset--font-size--x-small)",
+					"fontWeight": 500, 
+					"fontFamily": "Cormorant Garamond"
+                }
+			},
+			"h6": {
+				"typography": {
+                    "fontSize": "var(--wp--preset--font-size--tiny)",
+					"fontWeight": 600, 
+					"fontFamily": "Lato",
+					"textTransform": "uppercase",
+					"letterSpacing": "0.05rem"
+                },
+				"spacing": {
+					"padding": {
+						"top": ".45rem",
+						"bottom": ".45rem"
+					}
+				}
+			},
 			"button": {
 				"border": {
 					"radius": "4px"
@@ -177,122 +473,6 @@
 						"text": "var(--wp--preset--color--white)"
 					}
 				}
-			},
-			"h1": {
-				"spacing": {
-					"padding": {
-						"top": "0.3rem",
-						"bottom": "0.3rem",
-						"right": "0",
-						"left": "0"
-					}
-				},
-				"typography": {
-					"fontFamily": "'Cormorant Garamond', san-serif",
-					"fontWeight": "600",
-					"fontSize": "clamp(2.5rem, 5vw, 3rem)",
-					"lineHeight": "1.2"
-				}
-			},
-			"h2": {
-				"spacing": {
-					"margin": {
-						"top": "0rem",
-						"bottom": "0rem",
-						"right": "0",
-						"left": "0"
-					},
-					"padding": {
-						"top": "0.5rem",
-						"bottom": "0.5rem",
-						"right": "0",
-						"left": "0"
-					}
-				},
-				"typography": {
-					"fontFamily": "'Cormorant Garamond', san-serif",
-					"fontWeight": "600",
-					"fontSize": "clamp(2rem, 5vw, 3rem)",
-					"lineHeight": "1.2"
-				}
-			},
-			"h3": {
-				"spacing": {
-					"margin": {
-						"top": "0rem",
-						"bottom": "0rem",
-						"right": "0",
-						"left": "0"
-					},
-					"padding": {
-						"top": "0.5rem",
-						"bottom": "0.5rem",
-						"right": "0",
-						"left": "0"
-					}
-				},
-				"typography": {
-					"fontFamily": "'Cormorant Garamond', san-serif",
-					"fontSize": "clamp(1.5rem, 5vw, 2.5rem)"
-				}
-			},
-			"h4": {
-				"spacing": {
-					"padding": {
-						"top": "0.5rem",
-						"bottom": "0.5rem",
-						"right": "0",
-						"left": "0"
-					}
-				},
-				"typography": {
-					"fontFamily": "'Cormorant Garamond', san-serif",
-					"fontSize": "clamp(1.45rem, 5vw, 2rem)"
-				}
-			},
-			"h5": {
-				"spacing": {
-					"padding": {
-						"top": "0.5rem",
-						"bottom": "0.5rem",
-						"right": "0",
-						"left": "0"
-					}
-				},
-				"typography": {
-					"fontSize": "clamp(1.3rem, 5vw, 1.5rem)",
-					"fontWeight": "700",
-					"fontFamily": "'Cormorant Garamond', san-serif"
-				}
-			},
-			"h6": {
-				"spacing": {
-					"padding": {
-						"top": "0.5rem",
-						"bottom": "0.5rem",
-						"right": "0",
-						"left": "0"
-					}
-				},
-				"typography": {
-					"fontSize": "1rem",
-					"textTransform": "uppercase",
-					"letterSpacing": "0.05rem",
-					"fontFamily": "'Lato', san-serif"
-				}
-			},
-			"p": {
-				"spacing": {
-					"margin": {
-						"top": "0.5rem",
-						"bottom": "0.5em",
-						"right": "0",
-						"left": "0"
-					}
-				},
-				"typography": {
-					"lineHeight": "1.45"
-				}	
 			},
 			"figure" : {
 				"spacing" : {
@@ -342,13 +522,13 @@
 					}
 				}
 			},
-			"p" : {
-				"spacing" : {
+			"p": {
+				"spacing": {
 					"padding" : {
-						"top" : "0.5rem",
-						"bottom" : "0.5rem",
-						"left" : "0",
-						"right" : "0"
+						"top": "0.5rem",
+						"bottom": ".45rem",
+						"right": "0",
+						"left": "0"
 					}
 				}
 			},
@@ -413,18 +593,20 @@
             },
 			"core/site-title": {
                 "typography": {
-					"fontSize": "1.5rem !important",
+					"fontSize": "1.5rem",
 					"letterSpacing": "0.0rem"
                 },
 				"elements" : {
 					"h1": {
 						"typography": {
-							"fontFamily": "'Lato', san-serif"
+							"fontFamily": "'Lato', san-serif",
+							"fontSize": "1.5rem"
 						}
 					},
 					"link": {
 						"typography": {
-							"fontFamily": "'Lato', san-serif"
+							"fontFamily": "'Lato', san-serif",
+							"fontSize": "1.5rem"
 						}
 					}
 				}

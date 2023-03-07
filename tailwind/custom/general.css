@@ -1,6 +1,6 @@
 .wp-block-post {
 	&-title  {
-		@apply pt-0 pb-0 !important;
+		@apply mt-0 mb-0 pt-0 pb-0 !important;
 	}
 
 	&-content  {

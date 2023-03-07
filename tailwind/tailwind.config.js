@@ -66,7 +66,7 @@ if ('editor' === process.env._rs_TARGET) {
 	},
 	corePlugins: {
 		// Disable Preflight base styles in CSS targeting the editor.
-		preflight: includePreflight,
+		// preflight: includePreflight,
 	},
 	plugins: [
 		// Extract colors and widths from `theme.json`.

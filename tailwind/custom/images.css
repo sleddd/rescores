@@ -13,3 +13,7 @@
 .wp-caption-text {
 	@apply text-gray-dark text-sm pt-2 pb-2 italic;
 }
+
+.figure  {
+	@apply mt-0 mb-0;
+}
