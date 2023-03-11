@@ -9,8 +9,8 @@ It is based on Underscores ( https://underscores.me ) and Underscoretw ( https:/
 
 ---
 
-![screenshot-home](https://user-images.githubusercontent.com/1176945/222043554-70a1d495-360f-49a8-aef4-81be967ddbd0.png)
-
+![Screen Shot 2023-03-10 at 6 32 06 PM](https://user-images.githubusercontent.com/1176945/224460524-6b8f8a07-a1e5-4f60-aa97-8fe10295cf95.png)
+ 
 [View Demo Site](https://demo.claudetteraynor.info)
 
 ---
