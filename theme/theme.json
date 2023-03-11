@@ -412,8 +412,8 @@
 			"h3": {
 				"typography": {
                     "fontSize": "var(--wp--preset--font-size--medium)",
-					"fontWeight": 400, 
-					"fontFamily": "Cormorant Garamond"
+					"fontFamily": "Lato",
+					"fontWeight": "300"
                 }
 			},
 			"h4": {

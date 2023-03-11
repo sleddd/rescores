@@ -2,6 +2,9 @@
 	.summary {
 		margin-top: 30px
 	}
+	button, .wp-element-button, .wp-block-button__link {
+		color: #fff !important;
+	}
 }
 .woocommerce-info {
 	border-top-color: var(--wp--preset--color--link-active);
@@ -16,6 +19,13 @@
 input, textarea {
 	@apply border border-slate-400;
 	border-radius: 4px;
+}
+
+.woocommerce-page { 
+	#content {
+		max-width: 90%;
+		margin: 0 auto;
+	}
 }
 
 .woocommerce .quantity .qty {

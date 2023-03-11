@@ -11,7 +11,7 @@
 	}
 	
 	nav {
-		max-width: calc( 100% - 165px ) !important;
+		max-width: calc( 100% - 280px ) !important;
 		@apply flex grow justify-end !important;
 
 		.wp-block-navigation__responsive-close {
@@ -211,6 +211,10 @@
 			li {
 				border-color: #4b5563 !important;
 
+				@media( max-width: 600px ) {
+					border-color: #202c3c !important;
+				}
+
 				button {
 					svg {
 						fill: #111827;
@@ -222,9 +226,17 @@
 					background: #374151;
 					border-color: #4b5563 !important;
 
+					@media( max-width: 600px ) {
+						border-color: #202c3c !important;
+					}
+
 					li {
 						background: #374151;
 						border-color: #4b5563 !important;
+
+						@media( max-width: 600px ) {
+							border-color: #202c3c !important;
+						}
 					}
 				}
 			}
