@@ -42,7 +42,15 @@ if ('editor' === process.env._rs_TARGET) {
 		'not-italic',
 		'text-left',
 		'text-center',
-		'text-right'
+		'text-right',
+		'shadow-sm',
+		'shadow',
+		'shadow-md',
+		'shadow-lg',
+		'shadow-xl',
+		'shadow-2xl',
+		'shadow-inner',
+		'shadow-none'
 	],
 	theme: {
 		// Extend the default Tailwind theme.
@@ -59,14 +67,14 @@ if ('editor' === process.env._rs_TARGET) {
 				'sans': [ 'Lato', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
 				'serif': ['Cormorant Garamond', 'Georgia', 'Times New Roman', 'Time', 'ui-serif', 'serif'],
 				'mono': ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
-				'heading': ['Comorant Garamond', 'serif'],
-				'body': ['Lato', 'sans-serif']
+				'heading': ['Lato', 'sans-serif'],
+				'body': ['Comorant Garamond', 'serif']
 			},
 		},
 	},
 	corePlugins: {
 		// Disable Preflight base styles in CSS targeting the editor.
-		// preflight: includePreflight,
+		preflight: includePreflight,
 	},
 	plugins: [
 		// Extract colors and widths from `theme.json`.

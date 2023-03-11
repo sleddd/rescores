@@ -11,8 +11,8 @@
  * editor.
 */
 body {
-	@apply bg-white font-body text-body-copy leading-normal;
-	letter-spacing: 0.025rem;
+	@apply flex flex-col bg-white font-body text-body-copy leading-normal;
+	height: 100vh;
 }
 
 h1, 

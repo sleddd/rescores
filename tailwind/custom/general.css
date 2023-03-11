@@ -43,7 +43,7 @@ figure.wp-block-pullquote {
 }
 
 .wp-block-quote, blockquote {
-	@apply border mt-2 mb-2 border-l-8 border-l-link-active border-slate-300 !important;
+	@apply border mt-2 mb-2 border-0 !important;
 	border-radius: 4px;
 
 	p {
@@ -52,12 +52,8 @@ figure.wp-block-pullquote {
 	}
 
 	&.has-text-align-right {
-		@apply border border-l-2 border-slate-300 border-r-8 border-r-link-active !important;
+		@apply border-0 !important;
 	}
-}
-
-.wp-block-quote.has-text-align-right {
-	border-left: 1px solid #e2e8f0 !important;
 }
 
 .wp-calendar-table {
@@ -77,5 +73,45 @@ figure.wp-block-pullquote {
 	}
 	.pad {
 		display: none;
+	}
+}
+
+.wp-block-post-template {	
+
+	.wp-block-post {
+		@apply shadow-lg p-0;
+	}
+
+	.wp-block-post-featured-image {
+		@apply m-0 p-0;
+	}
+
+	.wp-block-post-date, 
+	.wp-block-post-title,
+	.wp-block-post-excerpt {
+		@apply pl-6 pr-6;
+	}
+}
+
+.primary-colors-container {
+	.wp-block-column {
+		min-height: 50px;
+	}
+}
+
+.custom-bg-cover {
+	@media( max-width: 600px ) {
+		padding: 0 !important;
+
+		.alignwide {
+			max-width: 100% !important;
+		}
+
+		.wp-block-cover {
+			min-height: 300px !important;
+			img {
+				height: 300px;
+			}
+		}
 	}
 }

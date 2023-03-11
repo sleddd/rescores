@@ -102,7 +102,7 @@ function _rs_continue_reading_link() {
 	if ( ! is_admin() ) {
 		$continue_reading = sprintf(
 			/* translators: %s: Name of current post. */
-			wp_kses( __( 'Continue reading %s', '_rs' ), array( 'span' => array( 'class' => array() ) ) ),
+			wp_kses( __( ' Continue reading... %s', '_rs' ), array( 'span' => array( 'class' => array() ) ) ),
 			the_title( '<span class="sr-only">"', '"</span>', false )
 		);
 
